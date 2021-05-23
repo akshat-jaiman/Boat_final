@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:boat/net/getdate.dart';
 import 'package:boat/ui/pdfview.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +14,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   String userid = FirebaseAuth.instance.currentUser.email;
+  List _items = [];
+  String _timeString;
+
+  DateTime now = new DateTime.now();
+  DateTime selectedDate = DateTime.now();
+  int indexjson;
 
   Future<void> _signOut() async {
     await FirebaseAuth.instance.signOut();
@@ -18,13 +27,53 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
+    readJson();
+    _timeString =
+        "${DateTime.now().hour} : ${DateTime.now().minute} :${DateTime.now().second}";
+    Timer.periodic(Duration(seconds: 1), (Timer t) => _getCurrentTime());
     super.initState();
-    _loadData();
+
+    indexjson = getDate(selectedDate) - 1;
+    print(indexjson);
   }
 
-  _loadData() async {
-    var datajson = await rootBundle.loadString("assets/boatdata.json");
-    var decodedData = jsonDecode(datajson);
+  Future<void> readJson() async {
+    final String response = await rootBundle.loadString('assets/boatdata.json');
+    final data = await json.decode(response);
+    setState(() {
+      _items = data["data"];
+    });
+  }
+
+  void _getCurrentTime() {
+    setState(() {
+      _timeString =
+          "${DateTime.now().hour} : ${DateTime.now().minute} :${DateTime.now().second}";
+    });
+  }
+
+  _selectDate(BuildContext context) async {
+    final DateTime picked = await showDatePicker(
+      context: context,
+      initialDate: now,
+      firstDate: DateTime(2021),
+      lastDate: DateTime(2022),
+    );
+    if (picked != null && picked != selectedDate)
+      setState(() {
+        selectedDate = picked;
+        indexjson = getDate(selectedDate) - 1;
+        print(indexjson);
+      });
+  }
+
+  bool _comapreTide(String s) {
+    double i = double.parse(s);
+    if (i > 4) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   @override
@@ -38,9 +87,14 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             DrawerHeader(
-              child: CircleAvatar(
-                child: Icon(Icons.verified_user),
-                radius: 35,
+              child: Column(
+                children: [
+                  CircleAvatar(
+                    child: Icon(Icons.verified_user),
+                    radius: 35,
+                  ),
+                  Text(userid),
+                ],
               ),
             ),
             ListTile(
@@ -74,129 +128,105 @@ class _HomePageState extends State<HomePage> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(
-                height: 50,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Expanded(
-                  flex: 2,
-                  child: Column(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.amberAccent,
-                        ),
-                        width: MediaQuery.of(context).size.width,
-                        height: 100,
-                        child: Center(
-                          child: Text(
-                            '1 Jan 2021',
-                            style: TextStyle(fontSize: 25),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 50,
-                        child: Divider(
-                          height: 10,
-                          thickness: 1,
-                          color: Colors.black,
-                        ),
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.blueAccent,
-                        ),
-                        width: MediaQuery.of(context).size.width,
-                        child: DataTable(
-                          columns: [
-                            DataColumn(label: Text('Time')),
-                            DataColumn(label: Text('m')),
-                            DataColumn(label: Text('Time')),
-                            DataColumn(label: Text('Gate')),
-                          ],
-                          rows: [
-                            DataRow(cells: <DataCell>[
-                              DataCell(Text('06:44')),
-                              DataCell(Text('1.5')),
-                              DataCell(Text('02:58')),
-                              DataCell(Text('Raise')),
-                            ]),
-                            DataRow(cells: <DataCell>[
-                              DataCell(Text('12:09')),
-                              DataCell(Text('7.9')),
-                              DataCell(Text('08:59')),
-                              DataCell(Text('Lower')),
-                            ]),
-                            DataRow(cells: <DataCell>[
-                              DataCell(Text('19:13')),
-                              DataCell(Text('1.4')),
-                              DataCell(Text('15:22')),
-                              DataCell(Text('Raise')),
-                            ]),
-                            DataRow(cells: <DataCell>[
-                              DataCell(Text('-')),
-                              DataCell(Text('-')),
-                              DataCell(Text('21:34')),
-                              DataCell(Text('Lower')),
-                            ]),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+              Container(
+                child: Center(
+                    child: Text(
+                  _timeString,
+                  style: TextStyle(fontSize: 30),
+                )),
               ),
               SizedBox(
-                height: 100,
-                child: Divider(
-                  height: 10,
-                  thickness: 5,
-                  color: Colors.black,
-                ),
+                height: 20,
               ),
               SizedBox(
                 height: 50,
+                width: 250,
+                child: ElevatedButton(
+                    onPressed: () => _selectDate(context),
+                    child: Center(
+                      child: Text('select date'),
+                    )),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Expanded(
-                  flex: 2,
-                  child: Column(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.amberAccent,
-                        ),
-                        width: MediaQuery.of(context).size.width,
-                        height: 100,
-                        child: Center(
-                          child: Text(
-                            '2 Jan 2021',
-                            style: TextStyle(fontSize: 25),
-                          ),
+                child: Column(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.amberAccent,
+                      ),
+                      width: MediaQuery.of(context).size.width,
+                      height: 100,
+                      child: Center(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            ElevatedButton(
+                              onPressed: () {
+                                indexjson--;
+                                selectedDate =
+                                    selectedDate.subtract(Duration(days: 1));
+                                print(indexjson);
+                                print(selectedDate.day);
+                              },
+                              child: Icon(Icons.arrow_back),
+                            ),
+                            Text(
+                              selectedDate.day.toString(),
+                              style: TextStyle(fontSize: 25),
+                            ),
+                            Text(
+                              '-',
+                              style: TextStyle(fontSize: 25),
+                            ),
+                            Text(
+                              selectedDate.month.toString(),
+                              style: TextStyle(fontSize: 25),
+                            ),
+                            Text(
+                              '-',
+                              style: TextStyle(fontSize: 25),
+                            ),
+                            Text(
+                              selectedDate.year.toString(),
+                              style: TextStyle(fontSize: 25),
+                            ),
+                            ElevatedButton(
+                              onPressed: () {
+                                setState(() {
+                                  indexjson++;
+                                  selectedDate =
+                                      selectedDate.add(Duration(days: 1));
+                                  print(indexjson);
+                                  print(selectedDate.day);
+                                });
+                              },
+                              child: Icon(Icons.arrow_forward),
+                            ),
+                          ],
                         ),
                       ),
-                      SizedBox(
-                        height: 50,
-                        child: Divider(
-                          height: 10,
-                          thickness: 1,
-                          color: Colors.black,
-                        ),
+                    ),
+                    SizedBox(
+                      height: 50,
+                      child: Divider(
+                        height: 10,
+                        thickness: 1,
+                        color: Colors.black,
                       ),
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.blueAccent,
-                        ),
-                        width: MediaQuery.of(context).size.width,
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.blueAccent,
+                      ),
+                      width: MediaQuery.of(context).size.width,
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
                         child: DataTable(
                           columns: [
+                            DataColumn(label: Text('Tide')),
                             DataColumn(label: Text('Time')),
                             DataColumn(label: Text('m')),
                             DataColumn(label: Text('Time')),
@@ -204,358 +234,56 @@ class _HomePageState extends State<HomePage> {
                           ],
                           rows: [
                             DataRow(cells: <DataCell>[
-                              DataCell(Text('0:30')),
-                              DataCell(Text('7.3')),
-                              DataCell(Text('3:38')),
-                              DataCell(Text('Raise')),
+                              DataCell(_comapreTide(_items[indexjson]["tide1"])
+                                  ? Text('High')
+                                  : Text('low')),
+                              DataCell(
+                                Text(_items[indexjson]["openTime1"]),
+                              ),
+                              DataCell(Text(_items[indexjson]["tide1"])),
+                              DataCell(Text(_items[indexjson]["closeTime1"])),
+                              DataCell(Text(_items[indexjson]["status1"])),
                             ]),
                             DataRow(cells: <DataCell>[
-                              DataCell(Text('7:22')),
-                              DataCell(Text('1.6')),
-                              DataCell(Text('9:38')),
-                              DataCell(Text('Lower')),
+                              DataCell(_comapreTide(_items[indexjson]["tide2"])
+                                  ? Text('High')
+                                  : Text('low')),
+                              DataCell(
+                                Text(_items[indexjson]["openTime2"]),
+                              ),
+                              DataCell(Text(_items[indexjson]["tide2"])),
+                              DataCell(Text(_items[indexjson]["closeTime2"])),
+                              DataCell(Text(_items[indexjson]["status2"])),
                             ]),
                             DataRow(cells: <DataCell>[
-                              DataCell(Text('12:50')),
-                              DataCell(Text('7.9')),
-                              DataCell(Text('16:03')),
-                              DataCell(Text('Raise')),
+                              DataCell(_comapreTide(_items[indexjson]["tide3"])
+                                  ? Text('High')
+                                  : Text('low')),
+                              DataCell(
+                                Text(_items[indexjson]["openTime3"]),
+                              ),
+                              DataCell(Text(_items[indexjson]["tide3"])),
+                              DataCell(Text(_items[indexjson]["closeTime3"])),
+                              DataCell(Text(_items[indexjson]["status3"])),
                             ]),
                             DataRow(cells: <DataCell>[
-                              DataCell(Text('19:54')),
-                              DataCell(Text('1.4')),
-                              DataCell(Text('22:17')),
-                              DataCell(Text('Lower')),
+                              DataCell(_items[indexjson]["tide4"] == "-"
+                                  ? Text("-")
+                                  : _comapreTide(_items[indexjson]["tide4"])
+                                      ? Text('High')
+                                      : Text('low')),
+                              DataCell(
+                                Text(_items[indexjson]["openTime4"]),
+                              ),
+                              DataCell(Text(_items[indexjson]["tide4"])),
+                              DataCell(Text(_items[indexjson]["closeTime4"])),
+                              DataCell(Text(_items[indexjson]["status4"])),
                             ]),
                           ],
                         ),
                       ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 100,
-                child: Divider(
-                  height: 10,
-                  thickness: 5,
-                  color: Colors.black,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Expanded(
-                  flex: 2,
-                  child: Column(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.amberAccent,
-                        ),
-                        width: MediaQuery.of(context).size.width,
-                        height: 100,
-                        child: Center(
-                          child: Text(
-                            '3 Jan 2021',
-                            style: TextStyle(fontSize: 25),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 50,
-                        child: Divider(
-                          height: 10,
-                          thickness: 1,
-                          color: Colors.black,
-                        ),
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.blueAccent,
-                        ),
-                        width: MediaQuery.of(context).size.width,
-                        child: DataTable(
-                          columns: [
-                            DataColumn(label: Text('Time')),
-                            DataColumn(label: Text('m')),
-                            DataColumn(label: Text('Time')),
-                            DataColumn(label: Text('Gate')),
-                          ],
-                          rows: [
-                            DataRow(cells: <DataCell>[
-                              DataCell(Text('06:44')),
-                              DataCell(Text('1.5')),
-                              DataCell(Text('02:58')),
-                              DataCell(Text('Raise')),
-                            ]),
-                            DataRow(cells: <DataCell>[
-                              DataCell(Text('12:09')),
-                              DataCell(Text('7.9')),
-                              DataCell(Text('08:59')),
-                              DataCell(Text('Lower')),
-                            ]),
-                            DataRow(cells: <DataCell>[
-                              DataCell(Text('19:13')),
-                              DataCell(Text('1.4')),
-                              DataCell(Text('15:22')),
-                              DataCell(Text('Raise')),
-                            ]),
-                            DataRow(cells: <DataCell>[
-                              DataCell(Text('-')),
-                              DataCell(Text('-')),
-                              DataCell(Text('21:34')),
-                              DataCell(Text('Lower')),
-                            ]),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 100,
-                child: Divider(
-                  height: 10,
-                  thickness: 5,
-                  color: Colors.black,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Expanded(
-                  flex: 2,
-                  child: Column(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.amberAccent,
-                        ),
-                        width: MediaQuery.of(context).size.width,
-                        height: 100,
-                        child: Center(
-                          child: Text(
-                            '4 Jan 2021',
-                            style: TextStyle(fontSize: 25),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 50,
-                        child: Divider(
-                          height: 10,
-                          thickness: 1,
-                          color: Colors.black,
-                        ),
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.blueAccent,
-                        ),
-                        width: MediaQuery.of(context).size.width,
-                        child: DataTable(
-                          columns: [
-                            DataColumn(label: Text('Time')),
-                            DataColumn(label: Text('m')),
-                            DataColumn(label: Text('Time')),
-                            DataColumn(label: Text('Gate')),
-                          ],
-                          rows: [
-                            DataRow(cells: <DataCell>[
-                              DataCell(Text('06:44')),
-                              DataCell(Text('1.5')),
-                              DataCell(Text('02:58')),
-                              DataCell(Text('Raise')),
-                            ]),
-                            DataRow(cells: <DataCell>[
-                              DataCell(Text('12:09')),
-                              DataCell(Text('7.9')),
-                              DataCell(Text('08:59')),
-                              DataCell(Text('Lower')),
-                            ]),
-                            DataRow(cells: <DataCell>[
-                              DataCell(Text('19:13')),
-                              DataCell(Text('1.4')),
-                              DataCell(Text('15:22')),
-                              DataCell(Text('Raise')),
-                            ]),
-                            DataRow(cells: <DataCell>[
-                              DataCell(Text('-')),
-                              DataCell(Text('-')),
-                              DataCell(Text('21:34')),
-                              DataCell(Text('Lower')),
-                            ]),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 100,
-                child: Divider(
-                  height: 10,
-                  thickness: 5,
-                  color: Colors.black,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Expanded(
-                  flex: 2,
-                  child: Column(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.amberAccent,
-                        ),
-                        width: MediaQuery.of(context).size.width,
-                        height: 100,
-                        child: Center(
-                          child: Text(
-                            '5 Jan 2021',
-                            style: TextStyle(fontSize: 25),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 50,
-                        child: Divider(
-                          height: 10,
-                          thickness: 1,
-                          color: Colors.black,
-                        ),
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.blueAccent,
-                        ),
-                        width: MediaQuery.of(context).size.width,
-                        child: DataTable(
-                          columns: [
-                            DataColumn(label: Text('Time')),
-                            DataColumn(label: Text('m')),
-                            DataColumn(label: Text('Time')),
-                            DataColumn(label: Text('Gate')),
-                          ],
-                          rows: [
-                            DataRow(cells: <DataCell>[
-                              DataCell(Text('06:44')),
-                              DataCell(Text('1.5')),
-                              DataCell(Text('02:58')),
-                              DataCell(Text('Raise')),
-                            ]),
-                            DataRow(cells: <DataCell>[
-                              DataCell(Text('12:09')),
-                              DataCell(Text('7.9')),
-                              DataCell(Text('08:59')),
-                              DataCell(Text('Lower')),
-                            ]),
-                            DataRow(cells: <DataCell>[
-                              DataCell(Text('19:13')),
-                              DataCell(Text('1.4')),
-                              DataCell(Text('15:22')),
-                              DataCell(Text('Raise')),
-                            ]),
-                            DataRow(cells: <DataCell>[
-                              DataCell(Text('-')),
-                              DataCell(Text('-')),
-                              DataCell(Text('21:34')),
-                              DataCell(Text('Lower')),
-                            ]),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 100,
-                child: Divider(
-                  height: 10,
-                  thickness: 5,
-                  color: Colors.black,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Expanded(
-                  flex: 2,
-                  child: Column(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.amberAccent,
-                        ),
-                        width: MediaQuery.of(context).size.width,
-                        height: 100,
-                        child: Center(
-                          child: Text(
-                            '6 Jan 2021',
-                            style: TextStyle(fontSize: 25),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 50,
-                        child: Divider(
-                          height: 10,
-                          thickness: 1,
-                          color: Colors.black,
-                        ),
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.blueAccent,
-                        ),
-                        width: MediaQuery.of(context).size.width,
-                        child: DataTable(
-                          columns: [
-                            DataColumn(label: Text('Time')),
-                            DataColumn(label: Text('m')),
-                            DataColumn(label: Text('Time')),
-                            DataColumn(label: Text('Gate')),
-                          ],
-                          rows: [
-                            DataRow(cells: <DataCell>[
-                              DataCell(Text('06:44')),
-                              DataCell(Text('1.5')),
-                              DataCell(Text('02:58')),
-                              DataCell(Text('Raise')),
-                            ]),
-                            DataRow(cells: <DataCell>[
-                              DataCell(Text('12:09')),
-                              DataCell(Text('7.9')),
-                              DataCell(Text('08:59')),
-                              DataCell(Text('Lower')),
-                            ]),
-                            DataRow(cells: <DataCell>[
-                              DataCell(Text('19:13')),
-                              DataCell(Text('1.4')),
-                              DataCell(Text('15:22')),
-                              DataCell(Text('Raise')),
-                            ]),
-                            DataRow(cells: <DataCell>[
-                              DataCell(Text('-')),
-                              DataCell(Text('-')),
-                              DataCell(Text('21:34')),
-                              DataCell(Text('Lower')),
-                            ]),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
               SizedBox(

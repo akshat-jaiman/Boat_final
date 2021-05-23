@@ -1,43 +1,5620 @@
 {
     "data" : [
-        {
-            "openTime" : [
-                {
-                    "1" : "06:44",
-                    "2" : "12:09",
-                    "3" : "19:13",
-                    "4" : "-",
-                    "5" : "-"
+            {
+         
+            "openTime1" : "06:44",
+            "openTime2" : "12:09",
+            "openTime3" : "19:13",
+            "openTime4" : "-",
+            "openTime5" : "-",
 
-                }
-            ],
-            "closeTime" : [
-                {
-                    "1" : "02:58",
-                    "2" : "08:59",
-                    "3" : "15:22",
-                    "4" : "21:34",
-                    "5" : "-"
-                }
-            ],
-            "status": [
-                {
-                    "1" : "Raise",
-                    "2" : "Lower",
-                    "3" : "Raise",
-                    "4" : "Lower",
-                    "5" : "-"
-                }
-            ],
-            "tide" : [
-                {
-                    "1" : "1.5",
-                    "2" : "7.9",
-                    "3" : "1.4",
-                    "4" : "-",
-                    "5" : "-"
-                }
-            ]
-        }
+               
+            
+            "closeTime1" : "02:58",
+            "closeTime2" : "08:59",
+            "closeTime3" : "15:22",
+            "closeTime4" : "21:34",
+            "closeTime5" : "-",
+               
+            
+            "status1" : "Raise",
+            "status2" : "Lower",
+            "status3" : "Raise",
+            "status4" : "Lower",
+            "status5" : "-",
+               
+            
+            "tide1" : "1.5",
+            "tide2" : "7.9",
+            "tide3" : "1.4",
+            "tide4" : "-",
+            "tide5" : "-"
+                
+        },
+        
+            {
+         
+            "openTime1" : "0:30",
+            "openTime2" : "7:22",
+            "openTime3" : "12:50",
+            "openTime4" : "19:54",
+            "openTime5" : "-",
+
+       
+    
+            "closeTime1" : "3:38",
+            "closeTime2" : "9:38",
+            "closeTime3" : "16:03",
+            "closeTime4" : "22:17",
+            "closeTime5" : "-",
+       
+    
+            "status1" : "Raise",
+            "status2" : "Lower",
+            "status3" : "Raise",
+            "status4" : "Lower",
+            "status5" : "-",
+       
+    
+            "tide1" : "7.3",
+            "tide2" : "1.6",
+            "tide3" : "7.9",
+            "tide4" : "1.4",
+            "tide5" : "-"
+        
+        },
+
+     {
+         
+            "openTime1" : "1:12",
+            "openTime2" : "8:02",
+            "openTime3" : "13:33",
+            "openTime4" : "20:38",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "02:58",
+            "closeTime2" : "08:59",
+            "closeTime3" : "15:22",
+            "closeTime4" : "21:34",
+            "closeTime5" : "-",
+               
+            
+            "status1" : "Raise",
+            "status2" : "Lower",
+            "status3" : "Raise",
+            "status4" : "Lower",
+            "status5" : "-",
+               
+            
+            "tide1" : "7.2",
+            "tide2" : "1.7",
+            "tide3" : "7.8",
+            "tide4" : "1.5",
+            "tide5" : "-"
+                
+        },
+     {
+         
+            "openTime1" : "1:58",
+            "openTime2" : "8:45",
+            "openTime3" : "14:19",
+            "openTime4" : "21:23",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "5:07",
+            "closeTime2" : "11:03",
+            "closeTime3" : "17:34",
+            "closeTime4" : "23:52",
+            "closeTime5" : "-",
+               
+            
+            "status1" : "Raise",
+            "status2" : "Lower",
+            "status3" : "Raise",
+            "status4" : "Lower",
+            "status5" : "-",
+               
+            
+            "tide1" : "7",
+            "tide2" : "1.8",
+            "tide3" : "7.7",
+            "tide4" : "1.7",
+            "tide5" : "-"
+                
+        },
+     {
+         
+            "openTime1" : "2:46",
+            "openTime2" : "9:31",
+            "openTime3" : "15:12",
+            "openTime4" : "22:16",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "5:56",
+            "closeTime2" : "11:52",
+            "closeTime3" : "18:28",
+            "closeTime4" : "-",
+            "closeTime5" : "-",
+               
+            
+            "status1" : "Raise",
+            "status2" : "Lower",
+            "status3" : "Raise",
+            "status4" : "-",
+            "status5" : "-",
+               
+            
+            "tide1" : "6.8",
+            "tide2" : "2",
+            "tide3" : "7.5",
+            "tide4" : "1.8",
+            "tide5" : "-"
+                
+        },
+     {
+         
+            "openTime1" : "3:44",
+            "openTime2" : "10:27",
+            "openTime3" : "16:12",
+            "openTime4" : "23:15",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "0:49",
+            "closeTime2" : "6:55",
+            "closeTime3" : "20:33",
+            "closeTime4" : "19:29",
+            "closeTime5" : "-",
+               
+            
+            "status1" : "Lower",
+            "status2" : "Raise",
+            "status3" : "Lower",
+            "status4" : "Raise",
+            "status5" : "-",
+               
+            
+            "tide1" : "6.6",
+            "tide2" : "2.2",
+            "tide3" : "7.2",
+            "tide4" : "2",
+            "tide5" : "-"
+                
+        },
+     {
+         
+            "openTime1" : "4:49",
+            "openTime2" : "11:31",
+            "openTime3" : "17:18",
+            "openTime4" : "-",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "1:52",
+            "closeTime2" : "8:01",
+            "closeTime3" : "13:57",
+            "closeTime4" : "20:35",
+            "closeTime5" : "-",
+               
+            
+            "status1" : "Lower",
+            "status2" : "Raise",
+            "status3" : "Lower",
+            "status4" : "Raise",
+            "status5" : "-",
+               
+            
+            "tide1" : "6.5",
+            "tide2" : "2.3",
+            "tide3" : "7.1",
+            "tide4" : "-",
+            "tide5" : "-"
+                
+        },
+     {
+         
+            "openTime1" : "00:20",
+            "openTime2" : "05:58",
+            "openTime3" : "12:42",
+            "openTime4" : "18:27",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "02:57",
+            "closeTime2" : "09:11",
+            "closeTime3" : "15:08",
+            "closeTime4" : "21:43",
+            "closeTime5" : "-",
+               
+            
+            "status1" : "Lower",
+            "status2" : "Raise",
+            "status3" : "Lower",
+            "status4" : "Raise",
+            "status5" : "-",
+               
+            
+            "tide1" : "2.1",
+            "tide2" : "6.5",
+            "tide3" : "2.4",
+            "tide4" : "7.0",
+            "tide5" : "-"
+
+        },
+     {
+         
+            "openTime1" : "01:28",
+            "openTime2" : "07:07",
+            "openTime3" : "13:56",
+            "openTime4" : "19:36",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "04:03",
+            "closeTime2" : "10:21",
+            "closeTime3" : "16:22",
+            "closeTime4" : "22:50",
+            "closeTime5" : "05:06",
+               
+            
+            "status1" : "Lower",
+            "status2" : "Raise",
+            "status3" : "Lower",
+            "status4" : "Raise",
+            "status5" : "Lower",
+               
+            
+            "tide1" : "2.1",
+            "tide2" : "6.7",
+            "tide3" : "2.2",
+            "tide4" : "7.1",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "02:36",
+            "openTime2" : "08:12",
+            "openTime3" : "15:06",
+            "openTime4" : "20:39",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "11:25",
+            "closeTime2" : "17:29",
+            "closeTime3" : "23:51",
+            "closeTime4" : "-",
+            "closeTime5" : "-",
+               
+            
+            "status1" : "Raise",
+            "status2" : "Lower",
+            "status3" : "Raise",
+            "status4" : "-",
+            "status5" : "-",
+               
+            
+            "tide1" : "1.9",
+            "tide2" : "7.0",
+            "tide3" : "2.0",
+            "tide4" : "7.3",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "03:38",
+            "openTime2" : "09:08",
+            "openTime3" : "16:07",
+            "openTime4" : "21:33",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "06:02",
+            "closeTime2" : "12:21",
+            "closeTime3" : "18:28",
+            "closeTime4" : "-",
+            "closeTime5" : "-",
+               
+            
+            "status1" : "Lower",
+            "status2" : "Raise",
+            "status3" : "Lower",
+            "status4" : "-",
+            "status5" : "-",
+               
+            
+            "tide1" : "1.7",
+            "tide2" : "7.4",
+            "tide3" : "1.6",
+            "tide4" : "7.5",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "04:33",
+            "openTime2" : "09:59",
+            "openTime3" : "17:03",
+            "openTime4" : "22:23",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "00:44",
+            "closeTime2" : "06:52",
+            "closeTime3" : "13:11",
+            "closeTime4" : "19:22",
+            "closeTime5" : "-",
+               
+            
+            "status1" : "Raise",
+            "status2" : "Lower",
+            "status3" : "Raise",
+            "status4" : "Lower",
+            "status5" : "-",
+               
+            
+            "tide1" : "1.5",
+            "tide2" : "7.7",
+            "tide3" : "1.4",
+            "tide4" : "7.6",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "05:23",
+            "openTime2" : "10:46",
+            "openTime3" : "17:53",
+            "openTime4" : "23:09",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "01:34",
+            "closeTime2" : "07:39",
+            "closeTime3" : "13:58",
+            "closeTime4" : "20:11",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Raise",
+           "status2" : "Lower",
+           "status3" : "Raise",
+           "status4" : "Lower",
+           "status5" : "-",
+
+            
+            "tide1" : "1.4",
+            "tide2" : "8.0",
+            "tide3" : "1.2",
+            "tide4" : "7.7",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "06:09",
+            "openTime2" : "11:30",
+            "openTime3" : "18:39",
+            "openTime4" : "23:53",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "02:19",
+            "closeTime2" : "08:22",
+            "closeTime3" : "14:43",
+            "closeTime4" : "20:57",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Raise",
+           "status2" : "Lower",
+           "status3" : "Raise",
+           "status4" : "Lower",
+           "status5" : "-",
+
+            
+            "tide1" : "1.3",
+            "tide2" : "8.1",
+            "tide3" : "1.1",
+            "tide4" : "7.6",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "06:51",
+            "openTime2" : "12:23",
+            "openTime3" : "19:21",
+            "openTime4" : "-",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "03:03",
+            "closeTime2" : "09:04",
+            "closeTime3" : "15:26",
+            "closeTime4" : "21:41",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Raise",
+           "status2" : "Lower",
+           "status3" : "Raise",
+           "status4" : "Lower",
+           "status5" : "-",
+
+            
+            "tide1" : "1.3",
+            "tide2" : "8.1",
+            "tide3" : "1.2",
+            "tide4" : "-",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "00:36",
+            "openTime2" : "07:30",
+            "openTime3" : "12:55",
+            "openTime4" : "20:00",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "03:45",
+            "closeTime2" : "09:44",
+            "closeTime3" : "16:08",
+            "closeTime4" : "22:22",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Raise",
+           "status2" : "Lower",
+           "status3" : "Raise",
+           "status4" : "Lower",
+           "status5" : "-",
+
+            
+            "tide1" : "7.5",
+            "tide2" : "1.5",
+            "tide3" : "8.0",
+            "tide4" : "1.3",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "01:17",
+            "openTime2" : "08:06",
+            "openTime3" : "13:35",
+            "openTime4" : "20:37",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "04:25",
+            "closeTime2" : "10:22",
+            "closeTime3" : "16:48",
+            "closeTime4" : "23:03",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Raise",
+           "status2" : "Lower",
+           "status3" : "Raise",
+           "status4" : "Lower",
+           "status5" : "-",
+
+            
+            "tide1" : "7.3",
+            "tide2" : "1.7",
+            "tide3" : "7.7",
+            "tide4" : "1.6",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "01:58",
+            "openTime2" : "08:41",
+            "openTime3" : "14:17",
+            "openTime4" : "21:15",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "05:06",
+            "closeTime2" : "11:01",
+            "closeTime3" : "17:31",
+            "closeTime4" : "23:46",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Raise",
+           "status2" : "Lower",
+           "status3" : "Raise",
+           "status4" : "Lower",
+           "status5" : "-",
+
+            
+            "tide1" : "6.9",
+            "tide2" : "2.0",
+            "tide3" : "7.4",
+            "tide4" : "1.9",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "02:42",
+            "openTime2" : "09:18",
+            "openTime3" : "15:00",
+            "openTime4" : "21:53",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "05:50",
+            "closeTime2" : "11:41",
+            "closeTime3" : "18:14",
+            "closeTime4" : "-",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Raise",
+           "status2" : "Lower",
+           "status3" : "Raise",
+           "status4" : "-",
+           "status5" : "-",
+
+            
+            "tide1" : "6.6",
+            "tide2" : "2.3",
+            "tide3" : "7.0",
+            "tide4" : "2.2",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "03:26",
+            "openTime2" : "09:57",
+            "openTime3" : "15:46",
+            "openTime4" : "22:37",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "00:29",
+            "closeTime2" : "06:34",
+            "closeTime3" : "12:24",
+            "closeTime4" : "19:01",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Lower",
+           "status2" : "Raise",
+           "status3" : "Lower",
+           "status4" : "Raise",
+           "status5" : "-",
+
+            
+            "tide1" : "6.3",
+            "tide2" : "2.6",
+            "tide3" : "6.7",
+            "tide4" : "2.5",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "04:17",
+            "openTime2" : "10:45",
+            "openTime3" : "16:40",
+            "openTime4" : "23:30",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "01:17",
+            "closeTime2" : "07:27",
+            "closeTime3" : "13:15",
+            "closeTime4" : "19:56",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Lower",
+           "status2" : "Raise",
+           "status3" : "Lower",
+           "status4" : "Raise",
+           "status5" : "-",
+
+            
+            "tide1" : "6.0",
+            "tide2" : "2.9",
+            "tide3" : "6.3",
+            "tide4" : "2.8",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "05:17",
+            "openTime2" : "11:45",
+            "openTime3" : "17:43",
+            "openTime4" : "-",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "02:14",
+            "closeTime2" : "08:30",
+            "closeTime3" : "14:17",
+            "closeTime4" : "21:00",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Lower",
+           "status2" : "Raise",
+           "status3" : "Lower",
+           "status4" : "Raise",
+           "status5" : "-",
+
+            
+            "tide1" : "5.8",
+            "tide2" : "3.1",
+            "tide3" : "6.1",
+            "tide4" : "-",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "00:33",
+            "openTime2" : "06:25",
+            "openTime3" : "12:53",
+            "openTime4" : "18:49",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "03:17",
+            "closeTime2" : "09:38",
+            "closeTime3" : "15:26",
+            "closeTime4" : "22:03",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Lower",
+           "status2" : "Raise",
+           "status3" : "Lower",
+           "status4" : "Raise",
+           "status5" : "-",
+
+            
+            "tide1" : "2.9",
+            "tide2" : "5.8",
+            "tide3" : "3.1",
+            "tide4" : "6.1",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "01:36",
+            "openTime2" : "07:28",
+            "openTime3" : "14:03",
+            "openTime4" : "19:53",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "04:17",
+            "closeTime2" : "10:42",
+            "closeTime3" : "16:35",
+            "closeTime4" : "23:04",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Lower",
+           "status2" : "Raise",
+           "status3" : "Lower",
+           "status4" : "Raise",
+           "status5" : "-",
+
+            
+            "tide1" : "2.9",
+            "tide2" : "5.9",
+            "tide3" : "2.9",
+            "tide4" : "6.2",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "02:38",
+            "openTime2" : "08:26",
+            "openTime3" : "15:07",
+            "openTime4" : "20:49",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "05:14",
+            "closeTime2" : "11:38",
+            "closeTime3" : "17:37",
+            "closeTime4" : "23:58",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Lower",
+           "status2" : "Raise",
+           "status3" : "Lower",
+           "status4" : "Raise",
+           "status5" : "-",
+
+            
+            "tide1" : "2.7",
+            "tide2" : "6.3",
+            "tide3" : "2.6",
+            "tide4" : "6.5",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "03:34",
+            "openTime2" : "09:16",
+            "openTime3" : "16:02",
+            "openTime4" : "21:36",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "06:03",
+            "closeTime2" : "12:26",
+            "closeTime3" : "18:29",
+            "closeTime4" : "-",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Lower",
+           "status2" : "Raise",
+           "status3" : "Lower",
+           "status4" : "-",
+           "status5" : "-",
+
+            
+            "tide1" : "2.4",
+            "tide2" : "6.7",
+            "tide3" : "2.3",
+            "tide4" : "6.8",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "04:22",
+            "openTime2" : "09:58",
+            "openTime3" : "16:51",
+            "openTime4" : "22:17",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "00:44",
+            "closeTime2" : "06:47",
+            "closeTime3" : "13:08",
+            "closeTime4" : "19:15",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Raise",
+           "status2" : "Lower",
+           "status3" : "Raise",
+           "status4" : "Lower",
+           "status5" : "-",
+
+            
+            "tide1" : "2.1",
+            "tide2" : "7.1",
+            "tide3" : "1.9",
+            "tide4" : "7.1",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "05:07",
+            "openTime2" : "10:37",
+            "openTime3" : "17:37",
+            "openTime4" : "22:57",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "01:25",
+            "closeTime2" : "07:26",
+            "closeTime3" : "13:47",
+            "closeTime4" : "19:58",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Raise",
+           "status2" : "Lower",
+           "status3" : "Raise",
+           "status4" : "Lower",
+           "status5" : "-",
+
+            
+            "tide1" : "1.8",
+            "tide2" : "7.6",
+            "tide3" : "1.5",
+            "tide4" : "7.4",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "05:51",
+            "openTime2" : "11:15",
+            "openTime3" : "18:21",
+            "openTime4" : "23:36",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "02:05",
+            "closeTime2" : "08:06",
+            "closeTime3" : "14:27",
+            "closeTime4" : "20:39",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Raise",
+           "status2" : "Lower",
+           "status3" : "Raise",
+           "status4" : "Lower",
+           "status5" : "-",
+
+            
+            "tide1" : "1.5",
+            "tide2" : "8.0",
+            "tide3" : "1.2",
+            "tide4" : "7.6",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "06:34",
+            "openTime2" : "11:54",
+            "openTime3" : "19:03",
+            "openTime4" : "-",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "02:44",
+            "closeTime2" : "08:45",
+            "closeTime3" : "15:06",
+            "closeTime4" : "21:21",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Raise",
+           "status2" : "Lower",
+           "status3" : "Raise",
+           "status4" : "Lower",
+           "status5" : "-",
+
+            
+            "tide1" : "1.3",
+            "tide2" : "8.3",
+            "tide3" : "1.0",
+            "tide4" : "-",
+            "tide5" : "-"
+
+      },
+    {
+         
+            "openTime1" : "00:15",
+            "openTime2" : "07:14",
+            "openTime3" : "12:34",
+            "openTime4" : "19:45",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "03:24",
+            "closeTime2" : "09:24",
+            "closeTime3" : "15:47",
+            "closeTime4" : "22:02",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Raise",
+           "status2" : "Lower",
+           "status3" : "Raise",
+           "status4" : "Lower",
+           "status5" : "-",
+
+            
+            "tide1" : "7.7",
+            "tide2" : "1.2",
+            "tide3" : "8.4",
+            "tide4" : "0.9",
+            "tide5" : "-"
+
+      },
+      {
+         
+        "openTime1" : "00:15",
+        "openTime2" : "07:14",
+        "openTime3" : "12:34",
+        "openTime4" : "19:45",
+        "openTime5" : "-",
+
+           
+        
+        "closeTime1" : "03:24",
+        "closeTime2" : "09:24",
+        "closeTime3" : "15:47",
+        "closeTime4" : "22:02",
+        "closeTime5" : "-",
+           
+        
+       "status1" : "Raise",
+       "status2" : "Lower",
+       "status3" : "Raise",
+       "status4" : "Lower",
+       "status5" : "-",
+
+        
+        "tide1" : "7.7",
+        "tide2" : "1.2",
+        "tide3" : "8.4",
+        "tide4" : "0.9",
+        "tide5" : "-"
+
+  },
+  {
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:15",
+    "openTime2" : "07:14",
+    "openTime3" : "12:34",
+    "openTime4" : "19:45",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:24",
+    "closeTime2" : "09:24",
+    "closeTime3" : "15:47",
+    "closeTime4" : "22:02",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "7.7",
+    "tide2" : "1.2",
+    "tide3" : "8.4",
+    "tide4" : "0.9",
+    "tide5" : "-"
+
+},
+
+{
+         
+    "openTime1" : "04:17",
+    "openTime2" : "09:44",
+    "openTime3" : "16:53",
+    "openTime4" : "22:13",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "00:34",
+    "closeTime2" : "06:32",
+    "closeTime3" : "12:55",
+    "closeTime4" : "19:14",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "1.7",
+    "tide2" : "7.9",
+    "tide3" : "1.1",
+    "tide4" : "7.7",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "05:16",
+    "openTime2" : "10:34",
+    "openTime3" : "17:46",
+    "openTime4" : "23:00",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "0:24",
+    "closeTime2" : "07:27",
+    "closeTime3" : "13:46",
+    "closeTime4" : "20:01",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "1.2",
+    "tide2" : "8.2",
+    "tide3" : "0.8",
+    "tide4" : "8.1",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "06:09",
+    "openTime2" : "11:21",
+    "openTime3" : "18:35",
+    "openTime4" : "23:46",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "02:12",
+    "closeTime2" : "08:18",
+    "closeTime3" : "14:34",
+    "closeTime4" : "20:46",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "0.9",
+    "tide2" : "8.4",
+    "tide3" : "0.7",
+    "tide4" : "8.4",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "06:59",
+    "openTime2" : "12:09",
+    "openTime3" : "19:21",
+    "openTime4" : "-",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "02:59",
+    "closeTime2" : "09:08",
+    "closeTime3" : "15:22",
+    "closeTime4" : "21:31",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "0.7",
+    "tide2" : "8.4",
+    "tide3" : "0.8",
+    "tide4" : "-",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "00:33",
+    "openTime2" : "07:46",
+    "openTime3" : "12:57",
+    "openTime4" : "20:05",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "03:46",
+    "closeTime2" : "09:58",
+    "closeTime3" : "16:10",
+    "closeTime4" : "22:17",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "8.4",
+    "tide2" : "0.8",
+    "tide3" : "8.2",
+    "tide4" : "1.0",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "01:21",
+    "openTime2" : "08:32",
+    "openTime3" : "13:47",
+    "openTime4" : "20:49",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "05:26",
+    "closeTime2" : "11:43",
+    "closeTime3" : "17:52",
+    "closeTime4" : "23:52",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "8.3",
+    "tide2" : "1.0",
+    "tide3" : "7.8",
+    "tide4" : "1.3",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "02:12",
+    "openTime2" : "09:19",
+    "openTime3" : "14:40",
+    "openTime4" : "21:33",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "05:26",
+    "closeTime2" : "11:43",
+    "closeTime3" : "17:52",
+    "closeTime4" : "23:52",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "Lower",
+   "status5" : "-",
+
+    
+    "tide1" : "8.0",
+    "tide2" : "1.3",
+    "tide3" : "7.3",
+    "tide4" : "1.8",
+    "tide5" : "-"
+
+},
+{
+         
+    "openTime1" : "03:05",
+    "openTime2" : "10:08",
+    "openTime3" : "15:36",
+    "openTime4" : "22:19",
+    "openTime5" : "-",
+
+       
+    
+    "closeTime1" : "06:20",
+    "closeTime2" : "12:39",
+    "closeTime3" : "15:47",
+    "closeTime4" : "18:48",
+    "closeTime5" : "-",
+       
+    
+   "status1" : "Raise",
+   "status2" : "Lower",
+   "status3" : "Raise",
+   "status4" : "-",
+   "status5" : "-",
+
+    
+    "tide1" : "7.6",
+    "tide2" : "1.7",
+    "tide3" : "6.8",
+    "tide4" : "2.2",
+    "tide5" : "-"
+
+},
+     {
+         
+            "openTime1" : "04:01",
+            "openTime2" : "11:02",
+            "openTime3" : "16:38",
+            "openTime4" : "23:15",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "00:43",
+            "closeTime2" : "07:18",
+            "closeTime3" : "13:40",
+            "closeTime4" : "19:52",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Lower",
+           "status2" : "Raise",
+           "status3" : "Lower",
+           "status4" : "Raise",
+           "status5" : "-",
+
+            
+            "tide1" : "7.2",
+            "tide2" : "2.1",
+            "tide3" : "6.4",
+            "tide4" : "2.6",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "05:05",
+            "openTime2" : "12:04",
+            "openTime3" : "17:46",
+            "openTime4" : "-",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "01:42",
+            "closeTime2" : "08:21",
+            "closeTime3" : "14:46",
+            "closeTime4" : "21:00",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Lower",
+           "status2" : "Raise",
+           "status3" : "Lower",
+           "status4" : "Raise",
+           "status5" : "-",
+
+            
+            "tide1" : "6.8",
+            "tide2" : "2.3",
+            "tide3" : "6.1",
+            "tide4" : "-",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "00:16",
+            "openTime2" : "06:10",
+            "openTime3" : "13:08",
+            "openTime4" : "18:56",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "02:44",
+            "closeTime2" : "09:26",
+            "closeTime3" : "15:53",
+            "closeTime4" : "22:11",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Lower",
+           "status2" : "Raise",
+           "status3" : "Lower",
+           "status4" : "Raise",
+           "status5" : "-",
+
+            
+            "tide1" : "2.8",
+            "tide2" : "6.6",
+            "tide3" : "2.5",
+            "tide4" : "6.0",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "01:25",
+            "openTime2" : "07:16",
+            "openTime3" : "14:12",
+            "openTime4" : "19:58",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "03:52",
+            "closeTime2" : "10:29",
+            "closeTime3" : "16:54",
+            "closeTime4" : "23:11",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Lower",
+           "status2" : "Raise",
+           "status3" : "Lower",
+           "status4" : "Raise",
+           "status5" : "-",
+
+            
+            "tide1" : "2.9",
+            "tide2" : "6.5",
+            "tide3" : "2.5",
+            "tide4" : "6.1",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "02:27",
+            "openTime2" : "08:14",
+            "openTime3" : "15:07",
+            "openTime4" : "20:51",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "04:53",
+            "closeTime2" : "11:24",
+            "closeTime3" : "17:45",
+            "closeTime4" : "-",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Lower",
+           "status2" : "Raise",
+           "status3" : "Lower",
+           "status4" : "-",
+           "status5" : "-",
+
+            
+            "tide1" : "2.9",
+            "tide2" : "6.6",
+            "tide3" : "2.4",
+            "tide4" : "6.2",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "03:23",
+            "openTime2" : "09:04",
+            "openTime3" : "15:56",
+            "openTime4" : "21:36",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "00:03",
+            "closeTime2" : "05:47",
+            "closeTime3" : "12:13",
+            "closeTime4" : "18:30",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Raise",
+           "status2" : "Lower",
+           "status3" : "Raise",
+           "status4" : "Lower",
+           "status5" : "-",
+
+            
+            "tide1" : "2.7",
+            "tide2" : "6.7",
+            "tide3" : "2.2",
+            "tide4" : "6.5",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "04:12",
+            "openTime2" : "09:48",
+            "openTime3" : "16:39",
+            "openTime4" : "22:14",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "00:46",
+            "closeTime2" : "06:35",
+            "closeTime3" : "12:55",
+            "closeTime4" : "19:09",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Raise",
+           "status2" : "Lower",
+           "status3" : "Raise",
+           "status4" : "Lower",
+           "status5" : "-",
+
+            
+            "tide1" : "2.5",
+            "tide2" : "6.9",
+            "tide3" : "2.0",
+            "tide4" : "6.7",
+            "tide5" : "-"
+
+      },
+   {
+         
+            "openTime1" : "04:55",
+            "openTime2" : "10:26",
+            "openTime3" : "17:18",
+            "openTime4" : "22:50",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "01:26",
+            "closeTime2" : "07:17",
+            "closeTime3" : "13:34",
+            "closeTime4" : "19:45",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Raise",
+           "status2" : "Lower",
+           "status3" : "Raise",
+           "status4" : "Lower",
+           "status5" : "-",
+
+            
+            "tide1" : "2.2",
+            "tide2" : "7.0",
+            "tide3" : "1.9",
+            "tide4" : "7.0",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "05:36",
+            "openTime2" : "11:04",
+            "openTime3" : "17:56",
+            "openTime4" : "23:26",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "02:00",
+            "closeTime2" : "07:57",
+            "closeTime3" : "14:12",
+            "closeTime4" : "20:20",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Raise",
+           "status2" : "Lower",
+           "status3" : "Raise",
+           "status4" : "Lower",
+           "status5" : "-",
+
+            
+            "tide1" : "2.0",
+            "tide2" : "7.2",
+            "tide3" : "1.8",
+            "tide4" : "7.2",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "06:16",
+            "openTime2" : "11:40",
+            "openTime3" : "18:32",
+            "openTime4" : "23:59",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "02:35",
+            "closeTime2" : "08:36",
+            "closeTime3" : "14:48",
+            "closeTime4" : "20:54",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Raise",
+           "status2" : "Lower",
+           "status3" : "Raise",
+           "status4" : "Lower",
+           "status5" : "-",
+
+            
+            "tide1" : "1.9",
+            "tide2" : "7.2",
+            "tide3" : "1.7",
+            "tide4" : "7.3",
+            "tide5" : "-"
+
+      },
+    {
+         
+            "openTime1" : "00:00",
+            "openTime2" : "06:54",
+            "openTime3" : "12:17",
+            "openTime4" : "19:09",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "03:11",
+            "closeTime2" : "09:15",
+            "closeTime3" : "15:26",
+            "closeTime4" : "21:29",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Raise",
+           "status2" : "Lower",
+           "status3" : "Raise",
+           "status4" : "Lower",
+           "status5" : "-",
+
+            
+            "tide1" : "7.3",
+            "tide2" : "1.8",
+            "tide3" : "7.2",
+            "tide4" : "1.7",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "00:38",
+            "openTime2" : "07:32",
+            "openTime3" : "12:55",
+            "openTime4" : "19:44",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "03:48",
+            "closeTime2" : "09:54",
+            "closeTime3" : "16:03",
+            "closeTime4" : "22:04",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Raise",
+           "status2" : "Lower",
+           "status3" : "Raise",
+           "status4" : "Lower",
+           "status5" : "-",
+
+            
+            "tide1" : "7.4",
+            "tide2" : "1.7",
+            "tide3" : "7.2",
+            "tide4" : "1.8",
+            "tide5" : "-"
+
+      },
+    {
+         
+            "openTime1" : "01:14",
+            "openTime2" : "08:09",
+            "openTime3" : "13:33",
+            "openTime4" : "20:19",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "04:25",
+            "closeTime2" : "10:33",
+            "closeTime3" : "16:41",
+            "closeTime4" : "22:39",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Raise",
+           "status2" : "Lower",
+           "status3" : "Raise",
+           "status4" : "Lower",
+           "status5" : "-",
+
+            
+            "tide1" : "7.4",
+            "tide2" : "1.8",
+            "tide3" : "7.0",
+            "tide4" : "1.9",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "01:52",
+            "openTime2" : "08:48",
+            "openTime3" : "14:13",
+            "openTime4" : "20:55",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "05:04",
+            "closeTime2" : "11:15",
+            "closeTime3" : "17:20",
+            "closeTime4" : "23:17",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Raise",
+           "status2" : "Lower",
+           "status3" : "Raise",
+           "status4" : "Lower",
+           "status5" : "-",
+
+            
+            "tide1" : "7.4",
+            "tide2" : "1.8",
+            "tide3" : "6.8",
+            "tide4" : "2.1",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "02:32",
+            "openTime2" : "09:30",
+            "openTime3" : "14:57",
+            "openTime4" : "21:37",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "05:45",
+            "closeTime2" : "12:00",
+            "closeTime3" : "18:05",
+            "closeTime4" : "23:59",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Raise",
+           "status2" : "Lower",
+           "status3" : "Raise",
+           "status4" : "Lower",
+           "status5" : "-",
+
+            
+            "tide1" : "7.3",
+            "tide2" : "1.9",
+            "tide3" : "6.7",
+            "tide4" : "2.2",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "03:18",
+            "openTime2" : "10:16",
+            "openTime3" : "15:46",
+            "openTime4" : "22:23",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "00:00",
+            "closeTime2" : "06:32",
+            "closeTime3" : "12:50",
+            "closeTime4" : "18:55",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Lower",
+           "status2" : "Raise",
+           "status3" : "Lower",
+           "status4" : "Raise",
+           "status5" : "-",
+
+            
+            "tide1" : "7.2",
+            "tide2" : "2.0",
+            "tide3" : "6.5",
+            "tide4" : "2.4",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "04:09",
+            "openTime2" : "11:09",
+            "openTime3" : "16:42",
+            "openTime4" : "23:17",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "00:46",
+            "closeTime2" : "07:24",
+            "closeTime3" : "13:45",
+            "closeTime4" : "19:52",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Lower",
+           "status2" : "Raise",
+           "status3" : "Lower",
+           "status4" : "Raise",
+           "status5" : "-",
+
+            
+            "tide1" : "7.1",
+            "tide2" : "2.1",
+            "tide3" : "6.3",
+            "tide4" : "2.5",
+            "tide5" : "-"
+
+      },
+         {
+         
+            "openTime1" : "05:07",
+            "openTime2" : "12:09",
+            "openTime3" : "17:45",
+            "openTime4" : "-",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "01:43",
+            "closeTime2" : "08:23",
+            "closeTime3" : "14:47",
+            "closeTime4" : "20:56",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Lower",
+           "status2" : "Raise",
+           "status3" : "Lower",
+           "status4" : "Raise",
+           "status5" : "-",
+
+            
+            "tide1" : "7.0",
+            "tide2" : "2.2",
+            "tide3" : "6.3",
+            "tide4" : "-",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "00:22",
+            "openTime2" : "06:11",
+            "openTime3" : "13:13",
+            "openTime4" : "18:50",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "02:47",
+            "closeTime2" : "09:26",
+            "closeTime3" : "15:51",
+            "closeTime4" : "22:01",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Lower",
+           "status2" : "Raise",
+           "status3" : "Lower",
+           "status4" : "Raise",
+           "status5" : "-",
+
+            
+            "tide1" : "2.5",
+            "tide2" : "7.0",
+            "tide3" : "2.1",
+            "tide4" : "6.4",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "01:29",
+            "openTime2" : "07:15",
+            "openTime3" : "14:20",
+            "openTime4" : "19:55",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "03:54",
+            "closeTime2" : "10:30",
+            "closeTime3" : "16:54",
+            "closeTime4" : "23:07",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Lower",
+           "status2" : "Raise",
+           "status3" : "Lower",
+           "status4" : "Raise",
+           "status5" : "-",
+
+            
+            "tide1" : "2.4",
+            "tide2" : "7.1",
+            "tide3" : "1.9",
+            "tide4" : "6.7",
+            "tide5" : "-"
+
+      },
+    {
+         
+            "openTime1" : "02:41",
+            "openTime2" : "08:20",
+            "openTime3" : "15:24",
+            "openTime4" : "20:55",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "05:04",
+            "closeTime2" : "11:33",
+            "closeTime3" : "17:53",
+            "closeTime4" : "-",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Lower",
+           "status2" : "Raise",
+           "status3" : "Lower",
+           "status4" : "-",
+           "status5" : "-",
+
+            
+            "tide1" : "2.1",
+            "tide2" : "7.3",
+            "tide3" : "1.7",
+            "tide4" : "7.1",
+            "tide5" : "-"
+
+      },
+    {
+         
+            "openTime1" : "03:48",
+            "openTime2" : "09:19",
+            "openTime3" : "16:23",
+            "openTime4" : "21:49",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "00:06",
+            "closeTime2" : "06:07",
+            "closeTime3" : "12:31",
+            "closeTime4" : "18:47",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Raise",
+           "status2" : "Lower",
+           "status3" : "Raise",
+           "status4" : "Lower",
+           "status5" : "-",
+
+            
+            "tide1" : "1.8",
+            "tide2" : "7.6",
+            "tide3" : "1.4",
+            "tide4" : "7.5",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "04:50",
+            "openTime2" : "10:14",
+            "openTime3" : "17:20",
+            "openTime4" : "22:42",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "01:01",
+            "closeTime2" : "07:07",
+            "closeTime3" : "13:26",
+            "closeTime4" : "19:38",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Raise",
+           "status2" : "Lower",
+           "status3" : "Raise",
+           "status4" : "Lower",
+           "status5" : "-",
+
+            
+            "tide1" : "1.5",
+            "tide2" : "7.8",
+            "tide3" : "1.2",
+            "tide4" : "7.9",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "05:48",
+            "openTime2" : "11:06",
+            "openTime3" : "18:13",
+            "openTime4" : "23:32",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "01:54",
+            "closeTime2" : "08:03",
+            "closeTime3" : "14:18",
+            "closeTime4" : "20:27",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Raise",
+           "status2" : "Lower",
+           "status3" : "Raise",
+           "status4" : "Lower",
+           "status5" : "-",
+
+            
+            "tide1" : "1.2",
+            "tide2" : "7.9",
+            "tide3" : "1.1",
+            "tide4" : "8.1",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "06:41",
+            "openTime2" : "11:56",
+            "openTime3" : "19:01",
+            "openTime4" : "-",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "02:44",
+            "closeTime2" : "08:56",
+            "closeTime3" : "15:08",
+            "closeTime4" : "21:14",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Raise",
+           "status2" : "Lower",
+           "status3" : "Raise",
+           "status4" : "Lower",
+           "status5" : "-",
+
+            
+            "tide1" : "1.0",
+            "tide2" : "8.0",
+            "tide3" : "1.1",
+            "tide4" : "-",
+            "tide5" : "-"
+
+      },
+    {
+         
+            "openTime1" : "00:19",
+            "openTime2" : "07:31",
+            "openTime3" : "12:45",
+            "openTime4" : "19:48",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "03:33",
+            "closeTime2" : "09:48",
+            "closeTime3" : "15:57",
+            "closeTime4" : "22:01",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Raise",
+           "status2" : "Lower",
+           "status3" : "Raise",
+           "status4" : "Lower",
+           "status5" : "-",
+
+            
+            "tide1" : "8.3",
+            "tide2" : "1.0",
+            "tide3" : "7.8",
+            "tide4" : "1.2",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "01:09",
+            "openTime2" : "08:20",
+            "openTime3" : "13:35",
+            "openTime4" : "20:33",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "04:23",
+            "closeTime2" : "10:39",
+            "closeTime3" : "16:46",
+            "closeTime4" : "22:47",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Raise",
+           "status2" : "Lower",
+           "status3" : "Raise",
+           "status4" : "Lower",
+           "status5" : "-",
+
+            
+            "tide1" : "8.2",
+            "tide2" : "1.0",
+            "tide3" : "7.6",
+            "tide4" : "1.4",
+            "tide5" : "-"
+
+      },
+    {
+         
+            "openTime1" : "01:57",
+            "openTime2" : "09:06",
+            "openTime3" : "14:24",
+            "openTime4" : "21:16",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "05:12",
+            "closeTime2" : "11:29",
+            "closeTime3" : "17:34",
+            "closeTime4" : "23:32",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Raise",
+           "status2" : "Lower",
+           "status3" : "Raise",
+           "status4" : "Lower",
+           "status5" : "-",
+
+            
+            "tide1" : "8.1",
+            "tide2" : "1.2",
+            "tide3" : "7.3",
+            "tide4" : "1.7",
+            "tide5" : "-"
+
+      },
+    {
+         
+            "openTime1" : "02:46",
+            "openTime2" : "09:51",
+            "openTime3" : "15:14",
+            "openTime4" : "21:59",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "06:00",
+            "closeTime2" : "12:19",
+            "closeTime3" : "18:25",
+            "closeTime4" : "-",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Raise",
+           "status2" : "Lower",
+           "status3" : "Raise",
+           "status4" : "-",
+           "status5" : "-",
+
+            
+            "tide1" : "1.8",
+            "tide2" : "7.6",
+            "tide3" : "1.4",
+            "tide4" : "7.5",
+            "tide5" : "-"
+
+      },
+     {
+         
+            "openTime1" : "03:37",
+            "openTime2" : "10:38",
+            "openTime3" : "16:07",
+            "openTime4" : "22:45",
+            "openTime5" : "-",
+
+               
+            
+            "closeTime1" : "00:20",
+            "closeTime2" : "06:51",
+            "closeTime3" : "13:11",
+            "closeTime4" : "19:18",
+            "closeTime5" : "-",
+               
+            
+           "status1" : "Lower",
+           "status2" : "Raise",
+           "status3" : "Lower",
+           "status4" : "Raise",
+           "status5" : "-",
+
+            
+            "tide1" : "7.4",
+            "tide2" : "1.9",
+            "tide3" : "6.6",
+            "tide4" : "2.3",
+            "tide5" : "-"
+
+      }
+
     ]
 }
+
