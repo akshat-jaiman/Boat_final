@@ -1,5 +1,5 @@
 import 'package:boat/ui/authentication.dart';
-import 'package:boat/ui/homepage.dart';
+import 'package:boat/ui/bottomnavigation.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -29,5 +29,5 @@ Future<void> main() async {
   print(email);
   runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: email == null ? Authentication() : HomePage()));
+      home: email == null ? Authentication() : BottomNavigation()));
 }

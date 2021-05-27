@@ -45,12 +45,14 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _getCurrentTime() {
-    setState(() {
-      _timeString =
-          "${DateTime.now().hour} : ${DateTime.now().minute} :${DateTime.now().second}";
-      _utcTimeString =
-          "${DateTime.now().toUtc().hour} : ${DateTime.now().toUtc().minute} :${DateTime.now().toUtc().second}";
-    });
+    if (this.mounted) {
+      setState(() {
+        _timeString =
+            "${DateTime.now().hour} : ${DateTime.now().minute} :${DateTime.now().second}";
+        _utcTimeString =
+            "${DateTime.now().toUtc().hour} : ${DateTime.now().toUtc().minute} :${DateTime.now().toUtc().second}";
+      });
+    }
   }
 
   _selectDate(BuildContext context) async {
@@ -81,23 +83,6 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text('Home page'),
         centerTitle: true,
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.chat),
-            label: 'Chat',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.place),
-            label: 'Map',
-          ),
-        ],
       ),
       drawer: Drawer(
         child: Column(
