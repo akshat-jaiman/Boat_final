@@ -21,8 +21,7 @@ class _HomePageState extends State<HomePage> {
   String _timeString, _utcTimeString;
 
   DateTime now = new DateTime.now();
-  static DateTime selectedDate = DateTime.now();
-  int indexjson = getDate(selectedDate);
+  DateTime selectedDate = DateTime.now();
 
   Future<void> _signOut() async {
     await FirebaseAuth.instance.signOut();
@@ -30,14 +29,11 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
+    super.initState();
     readJson();
     _timeString =
         "${DateTime.now().hour} : ${DateTime.now().minute} :${DateTime.now().second}";
     Timer.periodic(Duration(seconds: 1), (Timer t) => _getCurrentTime());
-    super.initState();
-
-    indexjson = getDate(selectedDate) - 1;
-    print(indexjson);
   }
 
   Future<void> readJson() async {
@@ -67,8 +63,6 @@ class _HomePageState extends State<HomePage> {
     if (picked != null && picked != selectedDate)
       setState(() {
         selectedDate = picked;
-        indexjson = getDate(selectedDate) - 1;
-        print(indexjson);
       });
   }
 
@@ -87,6 +81,23 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text('Home page'),
         centerTitle: true,
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 0,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.chat),
+            label: 'Chat',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.place),
+            label: 'Map',
+          ),
+        ],
       ),
       drawer: Drawer(
         child: Column(
@@ -129,220 +140,255 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        decoration: BoxDecoration(
-          color: Colors.white,
-        ),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Container(
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Current Time   ->   ",
-                          style: TextStyle(fontSize: 20),
-                        ),
-                        Text(
-                          _timeString,
-                          style: TextStyle(fontSize: 30),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "UTC Time   ->   ",
-                          style: TextStyle(fontSize: 20),
-                        ),
-                        Text(
-                          _utcTimeString,
-                          style: TextStyle(fontSize: 30),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+      body: _items.isEmpty
+          ? Center(
+              child: CircularProgressIndicator(),
+            )
+          : Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              decoration: BoxDecoration(
+                color: Colors.white,
               ),
-              SizedBox(
-                height: 20,
-              ),
-              SizedBox(
-                height: 50,
-                width: 250,
-                child: ElevatedButton(
-                    onPressed: () => _selectDate(context),
-                    child: Center(
-                      child: Text('select date'),
-                    )),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
+              child: SingleChildScrollView(
                 child: Column(
                   children: [
                     Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.amberAccent,
-                      ),
-                      width: MediaQuery.of(context).size.width,
-                      height: 100,
-                      child: Center(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            ElevatedButton(
-                              onPressed: () {
-                                indexjson--;
-                                selectedDate =
-                                    selectedDate.subtract(Duration(days: 1));
-                                print(indexjson);
-                                print(selectedDate.day);
-                              },
-                              child: Icon(Icons.arrow_back),
-                            ),
-                            Text(
-                              selectedDate.day.toString(),
-                              style: TextStyle(fontSize: 25),
-                            ),
-                            Text(
-                              '-',
-                              style: TextStyle(fontSize: 25),
-                            ),
-                            Text(
-                              selectedDate.month.toString(),
-                              style: TextStyle(fontSize: 25),
-                            ),
-                            Text(
-                              '-',
-                              style: TextStyle(fontSize: 25),
-                            ),
-                            Text(
-                              selectedDate.year.toString(),
-                              style: TextStyle(fontSize: 25),
-                            ),
-                            ElevatedButton(
-                              onPressed: () {
-                                setState(() {
-                                  indexjson++;
-                                  selectedDate =
-                                      selectedDate.add(Duration(days: 1));
-                                  print(indexjson);
-                                  print(selectedDate.day);
-                                });
-                              },
-                              child: Icon(Icons.arrow_forward),
-                            ),
-                          ],
-                        ),
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Current Time   ->   ",
+                                style: TextStyle(fontSize: 20),
+                              ),
+                              Text(
+                                _timeString,
+                                style: TextStyle(fontSize: 30),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "UTC Time   ->   ",
+                                style: TextStyle(fontSize: 20),
+                              ),
+                              Text(
+                                _utcTimeString,
+                                style: TextStyle(fontSize: 30),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
                     SizedBox(
+                      height: 20,
+                    ),
+                    SizedBox(
                       height: 50,
-                      child: Divider(
-                        height: 10,
-                        thickness: 1,
-                        color: Colors.black,
+                      width: 250,
+                      child: ElevatedButton(
+                          onPressed: () => _selectDate(context),
+                          child: Center(
+                            child: Text('select date'),
+                          )),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.amberAccent,
+                            ),
+                            width: MediaQuery.of(context).size.width,
+                            height: 100,
+                            child: Center(
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  ElevatedButton(
+                                    onPressed: () {
+                                      selectedDate = selectedDate
+                                          .subtract(Duration(days: 1));
+
+                                      print(selectedDate.day);
+                                    },
+                                    child: Icon(Icons.arrow_back),
+                                  ),
+                                  Text(
+                                    selectedDate.day.toString(),
+                                    style: TextStyle(fontSize: 25),
+                                  ),
+                                  Text(
+                                    '-',
+                                    style: TextStyle(fontSize: 25),
+                                  ),
+                                  Text(
+                                    selectedDate.month.toString(),
+                                    style: TextStyle(fontSize: 25),
+                                  ),
+                                  Text(
+                                    '-',
+                                    style: TextStyle(fontSize: 25),
+                                  ),
+                                  Text(
+                                    selectedDate.year.toString(),
+                                    style: TextStyle(fontSize: 25),
+                                  ),
+                                  ElevatedButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        selectedDate =
+                                            selectedDate.add(Duration(days: 1));
+
+                                        print(selectedDate.day);
+                                      });
+                                    },
+                                    child: Icon(Icons.arrow_forward),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 50,
+                            child: Divider(
+                              height: 10,
+                              thickness: 1,
+                              color: Colors.black,
+                            ),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.white,
+                            ),
+                            width: MediaQuery.of(context).size.width,
+                            child: SingleChildScrollView(
+                              scrollDirection: Axis.horizontal,
+                              child: DataTable(
+                                columns: [
+                                  DataColumn(label: Text('Tide')),
+                                  DataColumn(label: Text('Time')),
+                                  DataColumn(label: Text('m')),
+                                  DataColumn(label: Text('Time')),
+                                  DataColumn(label: Text('Gate')),
+                                ],
+                                rows: [
+                                  DataRow(cells: <DataCell>[
+                                    DataCell(_comapreTide(
+                                            _items[getDate(selectedDate)]
+                                                ["tide1"])
+                                        ? Image(
+                                            image: AssetImage(
+                                                'assets/hightide.png'))
+                                        : Image(
+                                            image: AssetImage(
+                                                'assets/lowtide.png'))),
+                                    DataCell(
+                                      Text(_items[getDate(selectedDate)]
+                                          ["openTime1"]),
+                                    ),
+                                    DataCell(Text(_items[getDate(selectedDate)]
+                                        ["tide1"])),
+                                    DataCell(Text(_items[getDate(selectedDate)]
+                                        ["closeTime1"])),
+                                    DataCell(Text(_items[getDate(selectedDate)]
+                                        ["status1"])),
+                                  ]),
+                                  DataRow(cells: <DataCell>[
+                                    DataCell(_comapreTide(
+                                            _items[getDate(selectedDate)]
+                                                ["tide2"])
+                                        ? Image(
+                                            image: AssetImage(
+                                                'assets/hightide.png'))
+                                        : Image(
+                                            image: AssetImage(
+                                                'assets/lowtide.png'))),
+                                    DataCell(
+                                      Text(_items[getDate(selectedDate)]
+                                          ["openTime2"]),
+                                    ),
+                                    DataCell(Text(_items[getDate(selectedDate)]
+                                        ["tide2"])),
+                                    DataCell(Text(_items[getDate(selectedDate)]
+                                        ["closeTime2"])),
+                                    DataCell(Text(_items[getDate(selectedDate)]
+                                        ["status2"])),
+                                  ]),
+                                  DataRow(cells: <DataCell>[
+                                    DataCell(_comapreTide(
+                                            _items[getDate(selectedDate)]
+                                                ["tide3"])
+                                        ? Image(
+                                            image: AssetImage(
+                                                'assets/hightide.png'))
+                                        : Image(
+                                            image: AssetImage(
+                                                'assets/lowtide.png'))),
+                                    DataCell(
+                                      Text(_items[getDate(selectedDate)]
+                                          ["openTime3"]),
+                                    ),
+                                    DataCell(Text(_items[getDate(selectedDate)]
+                                        ["tide3"])),
+                                    DataCell(Text(_items[getDate(selectedDate)]
+                                        ["closeTime3"])),
+                                    DataCell(Text(_items[getDate(selectedDate)]
+                                        ["status3"])),
+                                  ]),
+                                  DataRow(cells: <DataCell>[
+                                    DataCell(_items[getDate(selectedDate)]
+                                                ["tide4"] ==
+                                            "-"
+                                        ? Text("-")
+                                        : _comapreTide(
+                                                _items[getDate(selectedDate)]
+                                                    ["tide4"])
+                                            ? Image(
+                                                image: AssetImage(
+                                                    'assets/hightide.png'))
+                                            : Image(
+                                                image: AssetImage(
+                                                    'assets/lowtide.png'))),
+                                    DataCell(
+                                      Text(_items[getDate(selectedDate)]
+                                          ["openTime4"]),
+                                    ),
+                                    DataCell(Text(_items[getDate(selectedDate)]
+                                        ["tide4"])),
+                                    DataCell(Text(_items[getDate(selectedDate)]
+                                        ["closeTime4"])),
+                                    DataCell(Text(_items[getDate(selectedDate)]
+                                        ["status4"])),
+                                  ]),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.white,
-                      ),
-                      width: MediaQuery.of(context).size.width,
-                      child: SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: DataTable(
-                          columns: [
-                            DataColumn(label: Text('Tide')),
-                            DataColumn(label: Text('Time')),
-                            DataColumn(label: Text('m')),
-                            DataColumn(label: Text('Time')),
-                            DataColumn(label: Text('Gate')),
-                          ],
-                          rows: [
-                            DataRow(cells: <DataCell>[
-                              DataCell(_comapreTide(_items[indexjson]["tide1"])
-                                  ? Image(
-                                      image: AssetImage('assets/hightide.png'))
-                                  : Image(
-                                      image: AssetImage('assets/lowtide.png'))),
-                              DataCell(
-                                Text(_items[indexjson]["openTime1"]),
-                              ),
-                              DataCell(Text(_items[indexjson]["tide1"])),
-                              DataCell(Text(_items[indexjson]["closeTime1"])),
-                              DataCell(Text(_items[indexjson]["status1"])),
-                            ]),
-                            DataRow(cells: <DataCell>[
-                              DataCell(_comapreTide(_items[indexjson]["tide2"])
-                                  ? Image(
-                                      image: AssetImage('assets/hightide.png'))
-                                  : Image(
-                                      image: AssetImage('assets/lowtide.png'))),
-                              DataCell(
-                                Text(_items[indexjson]["openTime2"]),
-                              ),
-                              DataCell(Text(_items[indexjson]["tide2"])),
-                              DataCell(Text(_items[indexjson]["closeTime2"])),
-                              DataCell(Text(_items[indexjson]["status2"])),
-                            ]),
-                            DataRow(cells: <DataCell>[
-                              DataCell(_comapreTide(_items[indexjson]["tide3"])
-                                  ? Image(
-                                      image: AssetImage('assets/hightide.png'))
-                                  : Image(
-                                      image: AssetImage('assets/lowtide.png'))),
-                              DataCell(
-                                Text(_items[indexjson]["openTime3"]),
-                              ),
-                              DataCell(Text(_items[indexjson]["tide3"])),
-                              DataCell(Text(_items[indexjson]["closeTime3"])),
-                              DataCell(Text(_items[indexjson]["status3"])),
-                            ]),
-                            DataRow(cells: <DataCell>[
-                              DataCell(_items[indexjson]["tide4"] == "-"
-                                  ? Text("-")
-                                  : _comapreTide(_items[indexjson]["tide4"])
-                                      ? Image(
-                                          image:
-                                              AssetImage('assets/hightide.png'))
-                                      : Image(
-                                          image: AssetImage(
-                                              'assets/lowtide.png'))),
-                              DataCell(
-                                Text(_items[indexjson]["openTime4"]),
-                              ),
-                              DataCell(Text(_items[indexjson]["tide4"])),
-                              DataCell(Text(_items[indexjson]["closeTime4"])),
-                              DataCell(Text(_items[indexjson]["status4"])),
-                            ]),
-                          ],
-                        ),
+                    SizedBox(
+                      height: 100,
+                      child: Divider(
+                        height: 10,
+                        thickness: 5,
+                        color: Colors.black,
                       ),
                     ),
                   ],
                 ),
               ),
-              SizedBox(
-                height: 100,
-                child: Divider(
-                  height: 10,
-                  thickness: 5,
-                  color: Colors.black,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
+            ),
     );
   }
 }
