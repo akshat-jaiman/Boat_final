@@ -1,11 +1,14 @@
 import 'dart:async';
 
 import 'package:boat/net/getdate.dart';
+import 'package:boat/ui/authentication.dart';
 import 'package:boat/ui/pdfview.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
+
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -15,11 +18,11 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   String userid = FirebaseAuth.instance.currentUser.email;
   List _items = [];
-  String _timeString;
+  String _timeString, _utcTimeString;
 
   DateTime now = new DateTime.now();
-  DateTime selectedDate = DateTime.now();
-  int indexjson;
+  static DateTime selectedDate = DateTime.now();
+  int indexjson = getDate(selectedDate);
 
   Future<void> _signOut() async {
     await FirebaseAuth.instance.signOut();
@@ -49,6 +52,8 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       _timeString =
           "${DateTime.now().hour} : ${DateTime.now().minute} :${DateTime.now().second}";
+      _utcTimeString =
+          "${DateTime.now().toUtc().hour} : ${DateTime.now().toUtc().minute} :${DateTime.now().toUtc().second}";
     });
   }
 
@@ -107,11 +112,16 @@ class _HomePageState extends State<HomePage> {
               title: Text('Open pdf'),
             ),
             ListTile(
-              onTap: () {
+              onTap: () async {
                 print('Log out');
+
                 _signOut();
-                Navigator.of(context).pop();
-                Navigator.of(context).pop();
+                SharedPreferences prefs = await SharedPreferences.getInstance();
+                prefs.remove('email');
+                var email = prefs.getString('email');
+                print(email);
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Authentication()));
               },
               leading: Icon(Icons.exit_to_app),
               title: Text('Log Out'),
@@ -129,11 +139,36 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             children: [
               Container(
-                child: Center(
-                    child: Text(
-                  _timeString,
-                  style: TextStyle(fontSize: 30),
-                )),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Current Time   ->   ",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        Text(
+                          _timeString,
+                          style: TextStyle(fontSize: 30),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "UTC Time   ->   ",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        Text(
+                          _utcTimeString,
+                          style: TextStyle(fontSize: 30),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
               SizedBox(
                 height: 20,
@@ -219,7 +254,7 @@ class _HomePageState extends State<HomePage> {
                     Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.blueAccent,
+                        color: Colors.white,
                       ),
                       width: MediaQuery.of(context).size.width,
                       child: SingleChildScrollView(
@@ -235,8 +270,10 @@ class _HomePageState extends State<HomePage> {
                           rows: [
                             DataRow(cells: <DataCell>[
                               DataCell(_comapreTide(_items[indexjson]["tide1"])
-                                  ? Text('High')
-                                  : Text('low')),
+                                  ? Image(
+                                      image: AssetImage('assets/hightide.png'))
+                                  : Image(
+                                      image: AssetImage('assets/lowtide.png'))),
                               DataCell(
                                 Text(_items[indexjson]["openTime1"]),
                               ),
@@ -246,8 +283,10 @@ class _HomePageState extends State<HomePage> {
                             ]),
                             DataRow(cells: <DataCell>[
                               DataCell(_comapreTide(_items[indexjson]["tide2"])
-                                  ? Text('High')
-                                  : Text('low')),
+                                  ? Image(
+                                      image: AssetImage('assets/hightide.png'))
+                                  : Image(
+                                      image: AssetImage('assets/lowtide.png'))),
                               DataCell(
                                 Text(_items[indexjson]["openTime2"]),
                               ),
@@ -257,8 +296,10 @@ class _HomePageState extends State<HomePage> {
                             ]),
                             DataRow(cells: <DataCell>[
                               DataCell(_comapreTide(_items[indexjson]["tide3"])
-                                  ? Text('High')
-                                  : Text('low')),
+                                  ? Image(
+                                      image: AssetImage('assets/hightide.png'))
+                                  : Image(
+                                      image: AssetImage('assets/lowtide.png'))),
                               DataCell(
                                 Text(_items[indexjson]["openTime3"]),
                               ),
@@ -270,8 +311,12 @@ class _HomePageState extends State<HomePage> {
                               DataCell(_items[indexjson]["tide4"] == "-"
                                   ? Text("-")
                                   : _comapreTide(_items[indexjson]["tide4"])
-                                      ? Text('High')
-                                      : Text('low')),
+                                      ? Image(
+                                          image:
+                                              AssetImage('assets/hightide.png'))
+                                      : Image(
+                                          image: AssetImage(
+                                              'assets/lowtide.png'))),
                               DataCell(
                                 Text(_items[indexjson]["openTime4"]),
                               ),

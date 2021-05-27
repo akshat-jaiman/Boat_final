@@ -1,8 +1,10 @@
 import 'package:boat/net/flutterfire.dart';
 import 'package:boat/ui/homepage.dart';
 import 'package:boat/ui/resetpassword.dart';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:toast/toast.dart';
 
 class Authentication extends StatefulWidget {
@@ -157,6 +159,9 @@ class _AuthenticationState extends State<Authentication> {
                             int shouldNavigate = await signIn(
                                 _emailField.text, _passwordField.text);
                             if (shouldNavigate == 1) {
+                              SharedPreferences prefs =
+                                  await SharedPreferences.getInstance();
+                              prefs.setString('email', 'userid');
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
