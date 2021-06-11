@@ -1,5 +1,5 @@
 import 'package:boat/net/flutterfire.dart';
-import 'package:boat/ui/homepage.dart';
+
 import 'package:boat/ui/initialuserdetails.dart';
 import 'package:boat/ui/resetpassword.dart';
 import 'package:boat/ui/bottomnavigation.dart';

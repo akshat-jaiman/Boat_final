@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:boat/net/getdate.dart';
 import 'package:boat/ui/authentication.dart';
 import 'package:boat/ui/pdfview.dart';
@@ -36,9 +35,11 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     readJson();
-    _timeString =
-        "${DateTime.now().hour} : ${DateTime.now().minute} :${DateTime.now().second}";
-    Timer.periodic(Duration(seconds: 1), (Timer t) => _getCurrentTime());
+    setState(() {
+      _timeString =
+          "${DateTime.now().hour} : ${DateTime.now().minute} :${DateTime.now().second}";
+      Timer.periodic(Duration(seconds: 1), (Timer t) => _getCurrentTime());
+    });
   }
 
   Future<void> readJson() async {
@@ -103,7 +104,7 @@ class _HomePageState extends State<HomePage> {
                           child: Icon(Icons.verified_user),
                           radius: 35,
                         ),
-                        Text(loggedinUser.uid),
+                        Text(loggedinUser.email),
                       ],
                     ),
                   ),
