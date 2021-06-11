@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:boat/net/getdate.dart';
 import 'package:boat/ui/authentication.dart';
 import 'package:boat/ui/pdfview.dart';
+import 'package:boat/ui/userprofile.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -16,7 +18,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String userid = FirebaseAuth.instance.currentUser.email;
+  final firestore = FirebaseFirestore.instance;
+  var loggedinUser = FirebaseAuth.instance.currentUser;
+  final auth = FirebaseAuth.instance;
+
   List _items = [];
   String _timeString, _utcTimeString;
 
@@ -79,57 +84,71 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Home page'),
-        centerTitle: true,
-      ),
-      drawer: Drawer(
-        child: Column(
-          children: [
-            DrawerHeader(
+    return _items.isEmpty
+        ? Center(
+            child: CircularProgressIndicator(),
+          )
+        : Scaffold(
+            appBar: AppBar(
+              title: Text('Home page'),
+              centerTitle: true,
+            ),
+            drawer: Drawer(
               child: Column(
                 children: [
-                  CircleAvatar(
-                    child: Icon(Icons.verified_user),
-                    radius: 35,
+                  DrawerHeader(
+                    child: Column(
+                      children: [
+                        CircleAvatar(
+                          child: Icon(Icons.verified_user),
+                          radius: 35,
+                        ),
+                        Text(loggedinUser.uid),
+                      ],
+                    ),
                   ),
-                  Text(userid),
+                  ListTile(
+                    onTap: () {
+                      print('Profile viewed');
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => UserProfile()));
+                    },
+                    leading: Icon(Icons.account_circle),
+                    title: Text('View Profile'),
+                  ),
+                  ListTile(
+                    onTap: () {
+                      print('pdf tapped');
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => PdfView()));
+                    },
+                    leading: Icon(Icons.picture_as_pdf),
+                    title: Text('Open pdf'),
+                  ),
+                  ListTile(
+                    onTap: () async {
+                      print('Log out');
+
+                      _signOut();
+                      SharedPreferences prefs =
+                          await SharedPreferences.getInstance();
+                      prefs.remove('email');
+                      var email = prefs.getString('email');
+                      print(email);
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Authentication()));
+                    },
+                    leading: Icon(Icons.exit_to_app),
+                    title: Text('Log Out'),
+                  ),
                 ],
               ),
             ),
-            ListTile(
-              onTap: () {
-                print('pdf tapped');
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => PdfView()));
-              },
-              leading: Icon(Icons.picture_as_pdf),
-              title: Text('Open pdf'),
-            ),
-            ListTile(
-              onTap: () async {
-                print('Log out');
-
-                _signOut();
-                SharedPreferences prefs = await SharedPreferences.getInstance();
-                prefs.remove('email');
-                var email = prefs.getString('email');
-                print(email);
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Authentication()));
-              },
-              leading: Icon(Icons.exit_to_app),
-              title: Text('Log Out'),
-            ),
-          ],
-        ),
-      ),
-      body: _items.isEmpty
-          ? Center(
-              child: CircularProgressIndicator(),
-            )
-          : Container(
+            body: Container(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
               decoration: BoxDecoration(
@@ -374,6 +393,6 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-    );
+          );
   }
 }

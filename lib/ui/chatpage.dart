@@ -1,5 +1,4 @@
 import 'package:boat/components/decorations.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -62,6 +61,7 @@ class _ChatPageState extends State<ChatPage> {
                       firestore.collection('messages').add({
                         'text': messagetext,
                         'sender': userid,
+                        'time': DateTime.now(),
                       });
                     },
                     child: Text(
@@ -85,7 +85,10 @@ class MessagesStream extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
-      stream: firestore.collection('messages').snapshots(),
+      stream: firestore
+          .collection('messages')
+          .orderBy('time', descending: false)
+          .snapshots(),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           final messages = snapshot.data.docs.reversed;
@@ -93,12 +96,14 @@ class MessagesStream extends StatelessWidget {
           for (var message in messages) {
             final messagetext = message.data()['text'];
             final messagesender = message.data()['sender'];
+            final messagetime = message.data()['time'];
 
             final currentUser = loggedinUser.email;
 
             final messagewidget = MessageBubble(
               sender: messagesender,
               text: messagetext,
+              time: messagetime,
               isMe: currentUser == messagesender,
             );
             messagewidgets.add(messagewidget);
@@ -123,9 +128,10 @@ class MessagesStream extends StatelessWidget {
 class MessageBubble extends StatelessWidget {
   final String sender;
   final String text;
+  final Timestamp time;
   final bool isMe;
 
-  const MessageBubble({Key key, this.sender, this.text, this.isMe})
+  const MessageBubble({Key key, this.sender, this.text, this.time, this.isMe})
       : super(key: key);
 
   @override
@@ -165,6 +171,27 @@ class MessageBubble extends StatelessWidget {
                     fontSize: 15, color: isMe ? Colors.white : Colors.black),
               ),
             ),
+          ),
+          SizedBox(
+            height: 2,
+          ),
+          Row(
+            mainAxisAlignment:
+                isMe ? MainAxisAlignment.end : MainAxisAlignment.start,
+            children: [
+              Text(
+                time.toDate().hour.toString(),
+                style: TextStyle(fontSize: 10, color: Colors.black54),
+              ),
+              Text(
+                ':',
+                style: TextStyle(fontSize: 10, color: Colors.black54),
+              ),
+              Text(
+                time.toDate().minute.toString(),
+                style: TextStyle(fontSize: 10, color: Colors.black54),
+              ),
+            ],
           ),
         ],
       ),

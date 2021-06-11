@@ -1,7 +1,8 @@
 import 'package:boat/net/flutterfire.dart';
 import 'package:boat/ui/homepage.dart';
+import 'package:boat/ui/initialuserdetails.dart';
 import 'package:boat/ui/resetpassword.dart';
-
+import 'package:boat/ui/bottomnavigation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -129,7 +130,7 @@ class _AuthenticationState extends State<Authentication> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => HomePage(),
+                                builder: (context) => InitialUserDetails(),
                               ),
                             );
                           } else if (shouldNavigate == 2) {
@@ -165,7 +166,7 @@ class _AuthenticationState extends State<Authentication> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => HomePage(),
+                                  builder: (context) => BottomNavigation(),
                                 ),
                               );
                             } else if (shouldNavigate == 2) {
