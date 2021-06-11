@@ -5,7 +5,7 @@
         android:label="boat"
         android:icon="@mipmap/ic_launcher">
         <meta-data android:name="com.google.android.geo.API_KEY"
-               android:value="AIzaSyBMFU6pzbipgpm8n6B7RD8RNk79xu7Aal0"/>
+               android:value=" YOUR API KEY HERE "/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
