@@ -2,12 +2,15 @@ import 'dart:async';
 import 'package:boat/net/getdate.dart';
 import 'package:boat/ui/authentication.dart';
 import 'package:boat/ui/pdfview.dart';
+
 import 'package:boat/ui/userprofile.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
+import 'package:boat/net/dayData.dart';
+import 'package:intl/intl.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -21,8 +24,14 @@ class _HomePageState extends State<HomePage> {
   var loggedinUser = FirebaseAuth.instance.currentUser;
   final auth = FirebaseAuth.instance;
 
+  List<String> closeTimes = [];
+  String timeValue = null;
+  var timeDiff = null;
+  var dateIndex = null;
+  bool dateIncreasd = false;
+
   List _items = [];
-  String _timeString, _utcTimeString;
+  String _timeString, _utcTimeString, _comapreTimeString;
 
   DateTime now = new DateTime.now();
   DateTime selectedDate = DateTime.now();
@@ -38,8 +47,15 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       _timeString =
           "${DateTime.now().hour} : ${DateTime.now().minute} :${DateTime.now().second}";
+
+      _comapreTimeString = "${DateTime.now().hour}:${DateTime.now().minute}";
       Timer.periodic(Duration(seconds: 1), (Timer t) => _getCurrentTime());
     });
+    DateTime todayDate = DateTime.now();
+
+    dateIndex = getDate(todayDate);
+    getDateData();
+    Timer.periodic(Duration(seconds: 1), (Timer t1) => {_getTime()});
   }
 
   Future<void> readJson() async {
@@ -55,6 +71,7 @@ class _HomePageState extends State<HomePage> {
       setState(() {
         _timeString =
             "${DateTime.now().hour} : ${DateTime.now().minute} :${DateTime.now().second}";
+        _comapreTimeString = "${DateTime.now().hour}:${DateTime.now().minute}";
         _utcTimeString =
             "${DateTime.now().toUtc().hour} : ${DateTime.now().toUtc().minute} :${DateTime.now().toUtc().second}";
       });
@@ -80,6 +97,110 @@ class _HomePageState extends State<HomePage> {
       return true;
     } else {
       return false;
+    }
+  }
+
+  void _getTime() {
+    var dateFormat = DateFormat("HH:mm");
+    var outputFormat = DateFormat("HH:mm:ss");
+
+    if (timeValue == "increase index") {
+      dateIndex++;
+      dateIncreasd = true;
+      getDateData();
+      return;
+    }
+
+    if (timeValue == null) return;
+    if (mounted) {
+      setState(() {
+        var v = dateFormat.parse(timeValue);
+        var currentTime =
+            outputFormat.parse(outputFormat.format(DateTime.now()));
+        var endTime = outputFormat.parse(outputFormat.format(v));
+
+        if (dateIncreasd) {
+          timeDiff = endTime.add(Duration(days: 1)).difference(currentTime);
+        } else {
+          timeDiff = endTime.difference(currentTime);
+        }
+        //var val = v.difference(dateFormat.parse(DateTime.now().toString()));
+        // print(dateFormat
+        //     .parse(timeValue)
+        //     .difference(dateFormat.parse(currentTime)));
+
+        // if (timeDiff < 0) {
+        //   timeDiff += 24;
+        // }
+
+        if (timeDiff == Duration(seconds: 0)) {
+          if (dateIncreasd) {
+            dateIncreasd = false;
+          }
+          getDateData();
+        }
+      });
+    }
+  }
+
+  bool compareDates(String d1, String d2) {
+    if (d1 == "-") {
+      return false;
+    }
+
+    var dateFormat = DateFormat("HH:mm");
+    // print(dateFormat.parse(d1));
+    // print(dateFormat.parse(d2));
+    if (dateIncreasd) {
+      return true;
+    }
+    return dateFormat.parse(d1).isAfter(dateFormat.parse(d2));
+  }
+
+  Future<void> getDateData() async {
+    closeTimes = await dateData(dateIndex);
+    //closeTimes = ["05:26", "11:43", "17:02", "17:04", "17:07"];
+    // print(dateIndex);
+    var outputFormat = DateFormat("HH:mm");
+    var date = outputFormat.format(DateTime.now());
+
+    timeValue = closeTimes.firstWhere((element) => compareDates(element, date),
+        orElse: () => "increase index");
+  }
+
+  String getCurrentStatus() {
+    String currentTime = "";
+    String s1 = _items[getDate(selectedDate)]["closeTime1"];
+    String s2 = _items[getDate(selectedDate)]["closeTime2"];
+    String s3 = _items[getDate(selectedDate)]["closeTime3"];
+    String s4 = _items[getDate(selectedDate)]["closeTime4"];
+
+    if (_comapreTimeString[1] == ":") {
+      _comapreTimeString = "0" + _comapreTimeString;
+    }
+
+    if (_comapreTimeString.length == 4) {
+      _comapreTimeString = _comapreTimeString[0] +
+          _comapreTimeString[1] +
+          _comapreTimeString[2] +
+          "0" +
+          _comapreTimeString[3];
+    }
+
+    if (_comapreTimeString.compareTo(s1) < 0) {
+      return _items[getDate(selectedDate)]["status1"];
+    } else if (_comapreTimeString.compareTo(s2) < 0) {
+      return _items[getDate(selectedDate)]["status2"];
+    } else if (_comapreTimeString.compareTo(s3) < 0) {
+      return _items[getDate(selectedDate)]["status3"];
+    } else if (_comapreTimeString.compareTo(s4) < 0) {
+      return _items[getDate(selectedDate)]["status4"];
+    } else {
+      if (_items[getDate(selectedDate)]["status4"] == "Lower") {
+        return "Lower";
+      } else {
+        return "Raise";
+      }
     }
   }
 
@@ -192,6 +313,20 @@ class _HomePageState extends State<HomePage> {
                     ),
                     SizedBox(
                       height: 20,
+                    ),
+                    SizedBox(
+                      height: 20,
+                      child: getCurrentStatus() == "Raise"
+                          ? Text("Currently Lowered")
+                          : Text("Currently Raised"),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    SizedBox(
+                      height: 40,
+                      child: Text(
+                          ' ${getCurrentStatus()} in ${timeDiff.toString().substring(0, 7)}'),
                     ),
                     SizedBox(
                       height: 50,
@@ -380,14 +515,6 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                         ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: 100,
-                      child: Divider(
-                        height: 10,
-                        thickness: 5,
-                        color: Colors.black,
                       ),
                     ),
                   ],

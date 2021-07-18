@@ -124,25 +124,12 @@ class _AuthenticationState extends State<Authentication> {
                       ),
                       child: MaterialButton(
                         onPressed: () async {
-                          int shouldNavigate = await register(
-                              _emailField.text, _passwordField.text);
-                          if (shouldNavigate == 1) {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => InitialUserDetails(),
-                              ),
-                            );
-                          } else if (shouldNavigate == 2) {
-                            _showToast('Password provided is too weak');
-                          } else if (shouldNavigate == 3) {
-                            _showToast('Account already exists');
-                          } else if (shouldNavigate == 4) {
-                            _showToast('Invalid Email');
-                          } else if (shouldNavigate == 5) {
-                            _showToast(
-                                'Registeration Failed, Please try again');
-                          }
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => InitialUserDetails(),
+                            ),
+                          );
                         },
                         child: Text("Register"),
                       ),
@@ -163,7 +150,7 @@ class _AuthenticationState extends State<Authentication> {
                               SharedPreferences prefs =
                                   await SharedPreferences.getInstance();
                               prefs.setString('email', 'userid');
-                              Navigator.push(
+                              Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => BottomNavigation(),

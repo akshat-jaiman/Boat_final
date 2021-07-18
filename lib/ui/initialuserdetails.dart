@@ -17,6 +17,16 @@ class _InitialUserDetailsState extends State<InitialUserDetails> {
   TextEditingController _boatType = new TextEditingController();
   TextEditingController _phoneNumber = new TextEditingController();
   TextEditingController _address = new TextEditingController();
+  TextEditingController _emailField = TextEditingController();
+  TextEditingController _passwordField = TextEditingController();
+  TextEditingController _passwordField2 = TextEditingController();
+  bool _obscureText = true;
+
+  void _toggle() {
+    setState(() {
+      _obscureText = !_obscureText;
+    });
+  }
 
   void _showToast(String msg) {
     Toast.show(msg, context, duration: Toast.LENGTH_SHORT, gravity: Toast.TOP);
@@ -141,6 +151,90 @@ class _InitialUserDetailsState extends State<InitialUserDetails> {
                 ),
                 SizedBox(height: MediaQuery.of(context).size.height / 35),
                 Container(
+                  width: MediaQuery.of(context).size.width / 1.3,
+                  child: TextFormField(
+                    textAlign: TextAlign.center,
+                    keyboardType: TextInputType.emailAddress,
+                    style: TextStyle(color: Colors.white),
+                    controller: _emailField,
+                    decoration: InputDecoration(
+                      hintText: "Enter Email Id",
+                      hintStyle: TextStyle(
+                        color: Colors.white,
+                      ),
+                      labelText: "Email",
+                      labelStyle: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: MediaQuery.of(context).size.height / 35),
+                Container(
+                  width: MediaQuery.of(context).size.width / 1.3,
+                  child: Column(
+                    children: [
+                      TextFormField(
+                        textAlign: TextAlign.center,
+                        keyboardType: TextInputType.visiblePassword,
+                        style: TextStyle(color: Colors.white),
+                        controller: _passwordField,
+                        obscureText: _obscureText,
+                        decoration: InputDecoration(
+                          suffixIcon: IconButton(
+                              icon: Icon(Icons.visibility),
+                              onPressed: () {
+                                setState(() {
+                                  _toggle();
+                                });
+                              }),
+                          hintText: "Enter Password",
+                          hintStyle: TextStyle(
+                            color: Colors.white,
+                          ),
+                          labelText: "Password",
+                          labelStyle: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: MediaQuery.of(context).size.height / 35),
+                Container(
+                  width: MediaQuery.of(context).size.width / 1.3,
+                  child: Column(
+                    children: [
+                      TextFormField(
+                        textAlign: TextAlign.center,
+                        keyboardType: TextInputType.visiblePassword,
+                        style: TextStyle(color: Colors.white),
+                        controller: _passwordField2,
+                        obscureText: _obscureText,
+                        decoration: InputDecoration(
+                          suffixIcon: IconButton(
+                              icon: Icon(Icons.visibility),
+                              onPressed: () {
+                                setState(() {
+                                  _toggle();
+                                });
+                              }),
+                          hintText: "ReEnter Password",
+                          hintStyle: TextStyle(
+                            color: Colors.white,
+                          ),
+                          labelText: "Password",
+                          labelStyle: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: MediaQuery.of(context).size.height / 35),
+                Container(
                   width: MediaQuery.of(context).size.width / 3,
                   height: 45,
                   decoration: BoxDecoration(
@@ -149,21 +243,37 @@ class _InitialUserDetailsState extends State<InitialUserDetails> {
                   ),
                   child: MaterialButton(
                     onPressed: () async {
-                      int shouldNavigate = await updateUserDetails(
-                          _userName.text,
-                          _boatName.text,
-                          _boatType.text,
-                          _phoneNumber.text,
-                          _address.text);
-                      if (shouldNavigate == 1) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => UserAgreement(),
-                          ),
-                        );
+                      if (_passwordField.text == _passwordField2.text) {
+                        int shouldNavigate = await register(
+                            _emailField.text, _passwordField.text);
+                        if (shouldNavigate == 1) {
+                          int shouldNavigate2 = await updateUserDetails(
+                              _userName.text,
+                              _boatName.text,
+                              _boatType.text,
+                              _phoneNumber.text,
+                              _address.text);
+                          if (shouldNavigate2 == 1) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => UserAgreement(),
+                              ),
+                            );
+                          } else {
+                            _showToast("An error occured, please try again");
+                          }
+                        } else if (shouldNavigate == 2) {
+                          _showToast('Password provided is too weak');
+                        } else if (shouldNavigate == 3) {
+                          _showToast('Account already exists');
+                        } else if (shouldNavigate == 4) {
+                          _showToast('Invalid Email');
+                        } else if (shouldNavigate == 5) {
+                          _showToast('Registeration Failed, Please try again');
+                        }
                       } else {
-                        _showToast("An error occured, please try again");
+                        _showToast("passwords do not match");
                       }
                     },
                     child: Text("Register"),

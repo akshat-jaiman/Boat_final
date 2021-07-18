@@ -1,26 +1,36 @@
 import 'package:boat/components/decorations.dart';
-import 'package:flutter/material.dart';
+import 'package:boat/models/userdetail.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 
 final firestore = FirebaseFirestore.instance;
 var loggedinUser = FirebaseAuth.instance.currentUser;
 
-class ChatPage extends StatefulWidget {
-  ChatPage({Key key}) : super(key: key);
+class ConversationScreen extends StatefulWidget {
+  final String chatroomId;
+  final String userName;
+  final UserData currentuser;
 
+  const ConversationScreen(
+      {Key key, this.chatroomId, this.userName, this.currentuser})
+      : super(key: key);
   @override
-  _ChatPageState createState() => _ChatPageState();
+  _ConversationScreenState createState() => _ConversationScreenState();
 }
 
-class _ChatPageState extends State<ChatPage> {
+class _ConversationScreenState extends State<ConversationScreen> {
   final messageTextController = TextEditingController();
   static final auth = FirebaseAuth.instance;
 
-  String messagetext, userid = auth.currentUser.email;
+  String messagetext;
 
   void messagestream() async {
-    await for (var snapshot in firestore.collection('messages').snapshots()) {
+    await for (var snapshot in firestore
+        .collection('ChatRoom')
+        .doc(widget.chatroomId)
+        .collection('chats')
+        .snapshots()) {
       for (var message in snapshot.docs) {
         print(message.data());
       }
@@ -32,7 +42,7 @@ class _ChatPageState extends State<ChatPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Group Chat'),
+        title: Text(widget.userName),
         backgroundColor: Colors.lightBlueAccent,
       ),
       body: SafeArea(
@@ -40,7 +50,10 @@ class _ChatPageState extends State<ChatPage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            MessagesStream(),
+            MessagesStream(
+              currentuser: widget.currentuser,
+              chatroomId: widget.chatroomId,
+            ),
             Container(
               decoration: kMessageContainerDecoration,
               child: Row(
@@ -58,9 +71,13 @@ class _ChatPageState extends State<ChatPage> {
                   TextButton(
                     onPressed: () {
                       messageTextController.clear();
-                      firestore.collection('messages').add({
+                      firestore
+                          .collection('ChatRoom')
+                          .doc(widget.chatroomId)
+                          .collection('chats')
+                          .add({
                         'text': messagetext,
-                        'sender': userid,
+                        'sender': widget.currentuser.name,
                         'time': DateTime.now(),
                       });
                     },
@@ -80,13 +97,18 @@ class _ChatPageState extends State<ChatPage> {
 }
 
 class MessagesStream extends StatelessWidget {
-  const MessagesStream({Key key}) : super(key: key);
+  final UserData currentuser;
+  final chatroomId;
+  const MessagesStream({Key key, this.currentuser, this.chatroomId})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
       stream: firestore
-          .collection('messages')
+          .collection('ChatRoom')
+          .doc(chatroomId)
+          .collection('chats')
           .orderBy('time', descending: false)
           .snapshots(),
       builder: (context, snapshot) {
@@ -98,7 +120,7 @@ class MessagesStream extends StatelessWidget {
             final messagesender = message.data()['sender'];
             final messagetime = message.data()['time'];
 
-            final currentUser = loggedinUser.email;
+            final currentUser = currentuser.name;
 
             final messagewidget = MessageBubble(
               sender: messagesender,
