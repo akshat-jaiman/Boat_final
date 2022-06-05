@@ -41,6 +41,7 @@ dependencies:
   shared_preferences: any
   google_maps_flutter: ^2.0.6
   geolocator: ^6.2.1
+  blinking_text: ^1.0.1+2
   
   
 

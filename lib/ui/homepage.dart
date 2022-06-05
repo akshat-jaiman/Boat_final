@@ -1,8 +1,9 @@
 import 'dart:async';
+
 import 'package:boat/net/getdate.dart';
 import 'package:boat/ui/authentication.dart';
 import 'package:boat/ui/pdfview.dart';
-
+import 'package:blinking_text/blinking_text.dart';
 import 'package:boat/ui/userprofile.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -10,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
 import 'package:boat/net/dayData.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
@@ -33,8 +35,8 @@ class _HomePageState extends State<HomePage> {
   List _items = [];
   String _timeString, _utcTimeString, _comapreTimeString;
 
-  DateTime now = new DateTime.now();
-  DateTime selectedDate = DateTime.now();
+  DateTime now = new DateTime.now().toUtc().add(Duration(hours: 1));
+  DateTime selectedDate = DateTime.now().toUtc().add(Duration(hours: 1));
 
   Future<void> _signOut() async {
     await FirebaseAuth.instance.signOut();
@@ -46,9 +48,10 @@ class _HomePageState extends State<HomePage> {
     readJson();
     setState(() {
       _timeString =
-          "${DateTime.now().hour} : ${DateTime.now().minute} :${DateTime.now().second}";
+          "${DateTime.now().toUtc().add(Duration(hours: 1)).hour.toString().padLeft(2, '0')} : ${DateTime.now().toUtc().minute.toString().padLeft(2, '0')} :${DateTime.now().toUtc().second.toString().padLeft(2, '0')}";
 
-      _comapreTimeString = "${DateTime.now().hour}:${DateTime.now().minute}";
+      _comapreTimeString =
+          "${DateTime.now().toUtc().add(Duration(hours: 1)).hour.toString().padLeft(2, '0')}:${DateTime.now().toUtc().minute.toString().padLeft(2, '0')}";
       Timer.periodic(Duration(seconds: 1), (Timer t) => _getCurrentTime());
     });
     DateTime todayDate = DateTime.now();
@@ -70,10 +73,11 @@ class _HomePageState extends State<HomePage> {
     if (this.mounted) {
       setState(() {
         _timeString =
-            "${DateTime.now().hour} : ${DateTime.now().minute} :${DateTime.now().second}";
-        _comapreTimeString = "${DateTime.now().hour}:${DateTime.now().minute}";
+            "${DateTime.now().toUtc().add(Duration(hours: 1)).hour.toString().padLeft(2, '0')} : ${DateTime.now().toUtc().minute.toString().padLeft(2, '0')} :${DateTime.now().toUtc().second.toString().padLeft(2, '0')}";
+        _comapreTimeString =
+            "${DateTime.now().toUtc().add(Duration(hours: 1)).hour.toString().padLeft(2, '0')}:${DateTime.now().toUtc().minute.toString().padLeft(2, '0')}";
         _utcTimeString =
-            "${DateTime.now().toUtc().hour} : ${DateTime.now().toUtc().minute} :${DateTime.now().toUtc().second}";
+            "${DateTime.now().toUtc().add(Duration(hours: 1)).hour.toString().padLeft(2, '0')} : ${DateTime.now().toUtc().minute.toString().padLeft(2, '0')} :${DateTime.now().toUtc().second.toString().padLeft(2, '0')}";
       });
     }
   }
@@ -91,12 +95,16 @@ class _HomePageState extends State<HomePage> {
       });
   }
 
-  bool _comapreTide(String s) {
+  int _comapreTide(String s) {
+    if (s == '-') {
+      return 3;
+    }
+
     double i = double.parse(s);
     if (i > 4) {
-      return true;
+      return 1;
     } else {
-      return false;
+      return 2;
     }
   }
 
@@ -115,8 +123,8 @@ class _HomePageState extends State<HomePage> {
     if (mounted) {
       setState(() {
         var v = dateFormat.parse(timeValue);
-        var currentTime =
-            outputFormat.parse(outputFormat.format(DateTime.now()));
+        var currentTime = outputFormat.parse(outputFormat
+            .format(DateTime.now().toUtc().add(Duration(hours: 1))));
         var endTime = outputFormat.parse(outputFormat.format(v));
 
         if (dateIncreasd) {
@@ -162,7 +170,8 @@ class _HomePageState extends State<HomePage> {
     //closeTimes = ["05:26", "11:43", "17:02", "17:04", "17:07"];
     // print(dateIndex);
     var outputFormat = DateFormat("HH:mm");
-    var date = outputFormat.format(DateTime.now());
+    var date =
+        outputFormat.format(DateTime.now().toUtc().add(Duration(hours: 1)));
 
     timeValue = closeTimes.firstWhere((element) => compareDates(element, date),
         orElse: () => "increase index");
@@ -170,33 +179,27 @@ class _HomePageState extends State<HomePage> {
 
   String getCurrentStatus() {
     String currentTime = "";
-    String s1 = _items[getDate(selectedDate)]["closeTime1"];
-    String s2 = _items[getDate(selectedDate)]["closeTime2"];
-    String s3 = _items[getDate(selectedDate)]["closeTime3"];
-    String s4 = _items[getDate(selectedDate)]["closeTime4"];
-
-    if (_comapreTimeString[1] == ":") {
-      _comapreTimeString = "0" + _comapreTimeString;
+    String s1 = _items[getDate(now)]["closeTime1"];
+    String s2 = _items[getDate(now)]["closeTime2"];
+    String s3 = _items[getDate(now)]["closeTime3"];
+    String s4 = _items[getDate(now)]["closeTime4"];
+    if (s4 == "-") {
+      s4 = s3;
     }
 
-    if (_comapreTimeString.length == 4) {
-      _comapreTimeString = _comapreTimeString[0] +
-          _comapreTimeString[1] +
-          _comapreTimeString[2] +
-          "0" +
-          _comapreTimeString[3];
-    }
-
-    if (_comapreTimeString.compareTo(s1) < 0) {
-      return _items[getDate(selectedDate)]["status1"];
-    } else if (_comapreTimeString.compareTo(s2) < 0) {
-      return _items[getDate(selectedDate)]["status2"];
-    } else if (_comapreTimeString.compareTo(s3) < 0) {
-      return _items[getDate(selectedDate)]["status3"];
-    } else if (_comapreTimeString.compareTo(s4) < 0) {
-      return _items[getDate(selectedDate)]["status4"];
+    if (_comapreTimeString.compareTo(s4) >= 0) {
+      if (_items[getDate(now)]["status4"] == "-") {
+        return _items[getDate(now)]["status3"];
+      } else
+        return _items[getDate(now)]["status4"];
+    } else if (_comapreTimeString.compareTo(s3) >= 0) {
+      return _items[getDate(now)]["status3"];
+    } else if (_comapreTimeString.compareTo(s2) >= 0) {
+      return _items[getDate(now)]["status2"];
+    } else if (_comapreTimeString.compareTo(s1) >= 0) {
+      return _items[getDate(now)]["status1"];
     } else {
-      if (_items[getDate(selectedDate)]["status4"] == "Lower") {
+      if (_items[getDate(now)]["status1"] == "Lower") {
         return "Lower";
       } else {
         return "Raise";
@@ -212,7 +215,14 @@ class _HomePageState extends State<HomePage> {
           )
         : Scaffold(
             appBar: AppBar(
-              title: Text('Home page'),
+              backgroundColor: Colors.blue.shade300,
+              title: Text(
+                'Home Page',
+                style: GoogleFonts.teko(
+                  color: Colors.black,
+                  fontSize: 30,
+                ),
+              ),
               centerTitle: true,
             ),
             drawer: Drawer(
@@ -274,244 +284,747 @@ class _HomePageState extends State<HomePage> {
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Colors.tealAccent,
               ),
               child: SingleChildScrollView(
                 child: Column(
                   children: [
+                    // The below code is for Time
                     Container(
                       child: Column(
                         children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                "Current Time   ->   ",
-                                style: TextStyle(fontSize: 20),
-                              ),
-                              Text(
-                                _timeString,
-                                style: TextStyle(fontSize: 30),
-                              ),
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                "UTC Time   ->   ",
-                                style: TextStyle(fontSize: 20),
-                              ),
-                              Text(
-                                _utcTimeString,
-                                style: TextStyle(fontSize: 30),
-                              ),
-                            ],
+                          Container(
+                            height: MediaQuery.of(context).size.height / 10,
+                            margin: EdgeInsets.only(
+                              left: 30,
+                              right: 30,
+                              top: 20,
+                              bottom: 5,
+                            ),
+                            padding: EdgeInsets.symmetric(
+                              vertical: 10,
+                              horizontal: 0,
+                            ),
+                            decoration: BoxDecoration(
+                              color: Colors.tealAccent.shade400,
+                              borderRadius: BorderRadius.circular(6),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "UK    ",
+                                  style: GoogleFonts.teko(
+                                    color: Colors.black,
+                                    fontSize: 40,
+                                  ),
+                                ),
+                                BlinkText(
+                                  _utcTimeString,
+                                  style: GoogleFonts.teko(
+                                    color: Colors.black,
+                                    fontSize: 40,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
                     ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    SizedBox(
-                      height: 20,
-                      child: getCurrentStatus() == "Raise"
-                          ? Text("Currently Lowered")
-                          : Text("Currently Raised"),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    SizedBox(
-                      height: 40,
-                      child: Text(
-                          ' ${getCurrentStatus()} in ${timeDiff.toString().substring(0, 7)}'),
-                    ),
-                    SizedBox(
-                      height: 50,
-                      width: 250,
-                      child: ElevatedButton(
-                          onPressed: () => _selectDate(context),
-                          child: Center(
-                            child: Text('select date'),
-                          )),
-                    ),
+
+                    // The below code is for gate status (UI and data part)
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Stack(
                         children: [
                           Container(
+                            height: MediaQuery.of(context).size.height / 12,
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Colors.amberAccent,
-                            ),
-                            width: MediaQuery.of(context).size.width,
-                            height: 100,
-                            child: Center(
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  ElevatedButton(
-                                    onPressed: () {
-                                      selectedDate = selectedDate
-                                          .subtract(Duration(days: 1));
-
-                                      print(selectedDate.day);
-                                    },
-                                    child: Icon(Icons.arrow_back),
-                                  ),
-                                  Text(
-                                    selectedDate.day.toString(),
-                                    style: TextStyle(fontSize: 25),
-                                  ),
-                                  Text(
-                                    '-',
-                                    style: TextStyle(fontSize: 25),
-                                  ),
-                                  Text(
-                                    selectedDate.month.toString(),
-                                    style: TextStyle(fontSize: 25),
-                                  ),
-                                  Text(
-                                    '-',
-                                    style: TextStyle(fontSize: 25),
-                                  ),
-                                  Text(
-                                    selectedDate.year.toString(),
-                                    style: TextStyle(fontSize: 25),
-                                  ),
-                                  ElevatedButton(
-                                    onPressed: () {
-                                      setState(() {
-                                        selectedDate =
-                                            selectedDate.add(Duration(days: 1));
-
-                                        print(selectedDate.day);
-                                      });
-                                    },
-                                    child: Icon(Icons.arrow_forward),
-                                  ),
+                              borderRadius: BorderRadius.circular(5),
+                              gradient: LinearGradient(
+                                colors: [
+                                  Colors.tealAccent.shade400,
+                                  Colors.tealAccent.shade200,
+                                  Colors.tealAccent.shade100,
                                 ],
                               ),
                             ),
                           ),
+                          Container(
+                            height: MediaQuery.of(context).size.height / 12,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Expanded(
+                                  flex: 2,
+                                  child: Text(
+                                    "Current Status  ",
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 20,
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                  flex: 3,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color: Colors.tealAccent.shade400,
+                                    ),
+                                    child: Center(
+                                      child: getCurrentStatus() == "Raise"
+                                          ? Text(
+                                              "RAISED",
+                                              style: GoogleFonts.teko(
+                                                textStyle: Theme.of(context)
+                                                    .textTheme
+                                                    .headline4,
+                                                color: Colors.black,
+                                                fontSize: 33,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            )
+                                          : Text(
+                                              "LOWERED",
+                                              style: GoogleFonts.teko(
+                                                textStyle: Theme.of(context)
+                                                    .textTheme
+                                                    .headline4,
+                                                color: Colors.black,
+                                                fontSize: 43,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    //The below code is for what to do next (lower or raise)
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Stack(
+                        children: [
+                          Container(
+                            height: MediaQuery.of(context).size.height / 12,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5),
+                              gradient: LinearGradient(
+                                colors: [
+                                  Colors.tealAccent.shade400,
+                                  Colors.tealAccent.shade200,
+                                  Colors.tealAccent.shade100,
+                                ],
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.blueAccent,
+                                  blurRadius: 5,
+                                  offset: Offset(0, 2),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Positioned.fill(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Container(
+                                  child: getCurrentStatus() == "Raise"
+                                      ? Image(
+                                          image: AssetImage(
+                                              'assets/downarrow.gif'),
+                                        )
+                                      : Image(
+                                          image:
+                                              AssetImage('assets/arrowup.gif'),
+                                        ),
+                                ),
+                                Container(
+                                  child: getCurrentStatus() == "Raise"
+                                      ? Text(
+                                          'Lower in',
+                                          style: GoogleFonts.teko(
+                                            color: Colors.black,
+                                            fontSize: 25,
+                                          ),
+                                        )
+                                      : Text(
+                                          'Raise in',
+                                          style: GoogleFonts.teko(
+                                            color: Colors.black,
+                                            fontSize: 25,
+                                          ),
+                                        ),
+                                ),
+                                Container(
+                                  child: Text(
+                                    '${timeDiff.toString().substring(0, 7)}',
+                                    style: GoogleFonts.teko(
+                                      color: Colors.black,
+                                      fontSize: 30,
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    // The below code is for the data shown from JSON file (UI and data part).
+                    Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Column(
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              _selectDate(context);
+                            },
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(5),
+                                      color: Colors.teal.shade300,
+                                    ),
+                                    width:
+                                        MediaQuery.of(context).size.width / 1.2,
+                                    height:
+                                        MediaQuery.of(context).size.height / 12,
+                                    child: Center(
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          Icon(Icons.arrow_left),
+                                          Text(
+                                            getWeekday(selectedDate) + "  :  ",
+                                            style: GoogleFonts.teko(
+                                              color: Colors.black,
+                                              fontSize: 35,
+                                            ),
+                                          ),
+                                          Text(
+                                            selectedDate.day.toString(),
+                                            style: GoogleFonts.teko(
+                                              color: Colors.black,
+                                              fontSize: 35,
+                                            ),
+                                          ),
+                                          Text(
+                                            '-',
+                                            style: GoogleFonts.teko(
+                                              color: Colors.black,
+                                              fontSize: 35,
+                                            ),
+                                          ),
+                                          Text(
+                                            selectedDate.month.toString(),
+                                            style: GoogleFonts.teko(
+                                              color: Colors.black,
+                                              fontSize: 35,
+                                            ),
+                                          ),
+                                          Text(
+                                            '-',
+                                            style: GoogleFonts.teko(
+                                              color: Colors.black,
+                                              fontSize: 35,
+                                            ),
+                                          ),
+                                          Text(
+                                            selectedDate.year.toString(),
+                                            style: GoogleFonts.teko(
+                                              color: Colors.black,
+                                              fontSize: 35,
+                                            ),
+                                          ),
+                                          Icon(Icons.arrow_right),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                           SizedBox(
-                            height: 50,
+                            height: 20,
                             child: Divider(
                               height: 10,
                               thickness: 1,
                               color: Colors.black,
                             ),
                           ),
-                          Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Colors.white,
-                            ),
-                            width: MediaQuery.of(context).size.width,
-                            child: SingleChildScrollView(
-                              scrollDirection: Axis.horizontal,
-                              child: DataTable(
-                                columns: [
-                                  DataColumn(label: Text('Tide')),
-                                  DataColumn(label: Text('Time')),
-                                  DataColumn(label: Text('m')),
-                                  DataColumn(label: Text('Time')),
-                                  DataColumn(label: Text('Gate')),
-                                ],
-                                rows: [
-                                  DataRow(cells: <DataCell>[
-                                    DataCell(_comapreTide(
-                                            _items[getDate(selectedDate)]
-                                                ["tide1"])
-                                        ? Image(
-                                            image: AssetImage(
-                                                'assets/hightide.png'))
-                                        : Image(
-                                            image: AssetImage(
-                                                'assets/lowtide.png'))),
-                                    DataCell(
-                                      Text(_items[getDate(selectedDate)]
-                                          ["openTime1"]),
+                          Padding(
+                            padding: const EdgeInsets.all(0),
+                            child: Stack(
+                              children: [
+                                Container(
+                                  height:
+                                      MediaQuery.of(context).size.height / 10,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(5),
+                                    gradient: LinearGradient(
+                                      colors: [
+                                        Colors.blue.shade200,
+                                        Colors.blue.shade600
+                                      ],
                                     ),
-                                    DataCell(Text(_items[getDate(selectedDate)]
-                                        ["tide1"])),
-                                    DataCell(Text(_items[getDate(selectedDate)]
-                                        ["closeTime1"])),
-                                    DataCell(Text(_items[getDate(selectedDate)]
-                                        ["status1"])),
-                                  ]),
-                                  DataRow(cells: <DataCell>[
-                                    DataCell(_comapreTide(
-                                            _items[getDate(selectedDate)]
-                                                ["tide2"])
-                                        ? Image(
-                                            image: AssetImage(
-                                                'assets/hightide.png'))
-                                        : Image(
-                                            image: AssetImage(
-                                                'assets/lowtide.png'))),
-                                    DataCell(
-                                      Text(_items[getDate(selectedDate)]
-                                          ["openTime2"]),
-                                    ),
-                                    DataCell(Text(_items[getDate(selectedDate)]
-                                        ["tide2"])),
-                                    DataCell(Text(_items[getDate(selectedDate)]
-                                        ["closeTime2"])),
-                                    DataCell(Text(_items[getDate(selectedDate)]
-                                        ["status2"])),
-                                  ]),
-                                  DataRow(cells: <DataCell>[
-                                    DataCell(_comapreTide(
-                                            _items[getDate(selectedDate)]
-                                                ["tide3"])
-                                        ? Image(
-                                            image: AssetImage(
-                                                'assets/hightide.png'))
-                                        : Image(
-                                            image: AssetImage(
-                                                'assets/lowtide.png'))),
-                                    DataCell(
-                                      Text(_items[getDate(selectedDate)]
-                                          ["openTime3"]),
-                                    ),
-                                    DataCell(Text(_items[getDate(selectedDate)]
-                                        ["tide3"])),
-                                    DataCell(Text(_items[getDate(selectedDate)]
-                                        ["closeTime3"])),
-                                    DataCell(Text(_items[getDate(selectedDate)]
-                                        ["status3"])),
-                                  ]),
-                                  DataRow(cells: <DataCell>[
-                                    DataCell(_items[getDate(selectedDate)]
-                                                ["tide4"] ==
-                                            "-"
-                                        ? Text("-")
-                                        : _comapreTide(
-                                                _items[getDate(selectedDate)]
-                                                    ["tide4"])
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.blueAccent,
+                                        blurRadius: 5,
+                                        offset: Offset(0, 2),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Positioned.fill(
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        child: _comapreTide(_items[
+                                                        getDate(selectedDate)]
+                                                    ["tide1"]) ==
+                                                1
                                             ? Image(
+                                                height: 50,
+                                                width: 50,
                                                 image: AssetImage(
                                                     'assets/hightide.png'))
-                                            : Image(
-                                                image: AssetImage(
-                                                    'assets/lowtide.png'))),
-                                    DataCell(
-                                      Text(_items[getDate(selectedDate)]
-                                          ["openTime4"]),
+                                            : _comapreTide(_items[getDate(
+                                                            selectedDate)]
+                                                        ["tide1"]) ==
+                                                    2
+                                                ? Image(
+                                                    height: 50,
+                                                    width: 50,
+                                                    image: AssetImage(
+                                                        'assets/lowtide.png'))
+                                                : Icon(Icons.chat),
+                                        flex: 1,
+                                      ),
+                                      Expanded(
+                                        flex: 4,
+                                        child: Row(
+                                          children: [
+                                            Expanded(
+                                              flex: 1,
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                children: [
+                                                  Text(
+                                                    "Tide Time : " +
+                                                        _items[getDate(
+                                                                selectedDate)]
+                                                            ["openTime1"],
+                                                    style: TextStyle(
+                                                        color: Colors.white),
+                                                  ),
+                                                  Text(
+                                                    "Gate Time : " +
+                                                        _items[getDate(
+                                                                selectedDate)]
+                                                            ["closeTime1"],
+                                                    style: TextStyle(
+                                                        color: Colors.white),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            Expanded(
+                                              flex: 1,
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                children: [
+                                                  Text(
+                                                    "Tide : " +
+                                                        _items[getDate(
+                                                                selectedDate)]
+                                                            ["tide1"] +
+                                                        " m",
+                                                    style: TextStyle(
+                                                        color: Colors.white),
+                                                  ),
+                                                  Text(
+                                                    "Gate : " +
+                                                        _items[getDate(
+                                                                selectedDate)]
+                                                            ["status1"],
+                                                    style: TextStyle(
+                                                        color: Colors.white),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(0),
+                            child: Stack(
+                              children: [
+                                Container(
+                                  height:
+                                      MediaQuery.of(context).size.height / 10,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(5),
+                                    gradient: LinearGradient(
+                                      colors: [
+                                        Colors.blue.shade200,
+                                        Colors.blue.shade600
+                                      ],
                                     ),
-                                    DataCell(Text(_items[getDate(selectedDate)]
-                                        ["tide4"])),
-                                    DataCell(Text(_items[getDate(selectedDate)]
-                                        ["closeTime4"])),
-                                    DataCell(Text(_items[getDate(selectedDate)]
-                                        ["status4"])),
-                                  ]),
-                                ],
-                              ),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.blueAccent,
+                                        blurRadius: 5,
+                                        offset: Offset(0, 2),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Positioned.fill(
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        child: _comapreTide(_items[
+                                                        getDate(selectedDate)]
+                                                    ["tide2"]) ==
+                                                1
+                                            ? Image(
+                                                height: 50,
+                                                width: 50,
+                                                image: AssetImage(
+                                                    'assets/hightide.png'))
+                                            : _comapreTide(_items[getDate(
+                                                            selectedDate)]
+                                                        ["tide2"]) ==
+                                                    2
+                                                ? Image(
+                                                    height: 50,
+                                                    width: 50,
+                                                    image: AssetImage(
+                                                        'assets/lowtide.png'))
+                                                : Icon(Icons.chat),
+                                        flex: 1,
+                                      ),
+                                      Expanded(
+                                        flex: 4,
+                                        child: Row(
+                                          children: [
+                                            Expanded(
+                                              flex: 1,
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                children: [
+                                                  Text(
+                                                    "Tide Time : " +
+                                                        _items[getDate(
+                                                                selectedDate)]
+                                                            ["openTime2"],
+                                                    style: TextStyle(
+                                                        color: Colors.white),
+                                                  ),
+                                                  Text(
+                                                    "Gate Time : " +
+                                                        _items[getDate(
+                                                                selectedDate)]
+                                                            ["closeTime2"],
+                                                    style: TextStyle(
+                                                        color: Colors.white),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            Expanded(
+                                              flex: 1,
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                children: [
+                                                  Text(
+                                                    "Tide : " +
+                                                        _items[getDate(
+                                                                selectedDate)]
+                                                            ["tide2"] +
+                                                        " m",
+                                                    style: TextStyle(
+                                                        color: Colors.white),
+                                                  ),
+                                                  Text(
+                                                    "Gate : " +
+                                                        _items[getDate(
+                                                                selectedDate)]
+                                                            ["status2"],
+                                                    style: TextStyle(
+                                                        color: Colors.white),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(0),
+                            child: Stack(
+                              children: [
+                                Container(
+                                  height:
+                                      MediaQuery.of(context).size.height / 10,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(5),
+                                    gradient: LinearGradient(
+                                      colors: [
+                                        Colors.blue.shade200,
+                                        Colors.blue.shade600
+                                      ],
+                                    ),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.blueAccent,
+                                        blurRadius: 5,
+                                        offset: Offset(0, 2),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Positioned.fill(
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        child: _comapreTide(_items[
+                                                        getDate(selectedDate)]
+                                                    ["tide3"]) ==
+                                                1
+                                            ? Image(
+                                                height: 50,
+                                                width: 50,
+                                                image: AssetImage(
+                                                    'assets/hightide.png'))
+                                            : _comapreTide(_items[getDate(
+                                                            selectedDate)]
+                                                        ["tide3"]) ==
+                                                    2
+                                                ? Image(
+                                                    height: 50,
+                                                    width: 50,
+                                                    image: AssetImage(
+                                                        'assets/lowtide.png'))
+                                                : Icon(Icons.chat),
+                                        flex: 1,
+                                      ),
+                                      Expanded(
+                                        flex: 4,
+                                        child: Row(
+                                          children: [
+                                            Expanded(
+                                              flex: 1,
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                children: [
+                                                  Text(
+                                                    "Tide Time : " +
+                                                        _items[getDate(
+                                                                selectedDate)]
+                                                            ["openTime3"],
+                                                    style: TextStyle(
+                                                        color: Colors.white),
+                                                  ),
+                                                  Text(
+                                                    "Gate Time : " +
+                                                        _items[getDate(
+                                                                selectedDate)]
+                                                            ["closeTime3"],
+                                                    style: TextStyle(
+                                                        color: Colors.white),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            Expanded(
+                                              flex: 1,
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                children: [
+                                                  Text(
+                                                    "Tide : " +
+                                                        _items[getDate(
+                                                                selectedDate)]
+                                                            ["tide3"] +
+                                                        " m",
+                                                    style: TextStyle(
+                                                        color: Colors.white),
+                                                  ),
+                                                  Text(
+                                                    "Gate : " +
+                                                        _items[getDate(
+                                                                selectedDate)]
+                                                            ["status3"],
+                                                    style: TextStyle(
+                                                        color: Colors.white),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(0),
+                            child: Stack(
+                              children: [
+                                Container(
+                                  height:
+                                      MediaQuery.of(context).size.height / 10,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(5),
+                                    gradient: LinearGradient(
+                                      colors: [
+                                        Colors.blue.shade200,
+                                        Colors.blue.shade600
+                                      ],
+                                    ),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.blueAccent,
+                                        blurRadius: 5,
+                                        offset: Offset(0, 2),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Positioned.fill(
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        child: _comapreTide(_items[
+                                                        getDate(selectedDate)]
+                                                    ["tide4"]) ==
+                                                1
+                                            ? Image(
+                                                height: 50,
+                                                width: 50,
+                                                image: AssetImage(
+                                                    'assets/hightide.png'))
+                                            : _comapreTide(_items[getDate(
+                                                            selectedDate)]
+                                                        ["tide4"]) ==
+                                                    2
+                                                ? Image(
+                                                    height: 50,
+                                                    width: 50,
+                                                    image: AssetImage(
+                                                        'assets/lowtide.png'))
+                                                : Icon(Icons.keyboard_control),
+                                        flex: 1,
+                                      ),
+                                      Expanded(
+                                        flex: 4,
+                                        child: Row(
+                                          children: [
+                                            Expanded(
+                                              flex: 1,
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                children: [
+                                                  Text(
+                                                    "Tide Time : " +
+                                                        _items[getDate(
+                                                                selectedDate)]
+                                                            ["openTime4"],
+                                                    style: TextStyle(
+                                                        color: Colors.white),
+                                                  ),
+                                                  Text(
+                                                    "Gate Time : " +
+                                                        _items[getDate(
+                                                                selectedDate)]
+                                                            ["closeTime4"],
+                                                    style: TextStyle(
+                                                        color: Colors.white),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            Expanded(
+                                              flex: 1,
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                children: [
+                                                  Text(
+                                                    "Tide : " +
+                                                        _items[getDate(
+                                                                selectedDate)]
+                                                            ["tide4"] +
+                                                        " m",
+                                                    style: TextStyle(
+                                                        color: Colors.white),
+                                                  ),
+                                                  Text(
+                                                    "Gate : " +
+                                                        _items[getDate(
+                                                                selectedDate)]
+                                                            ["status4"],
+                                                    style: TextStyle(
+                                                        color: Colors.white),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ],

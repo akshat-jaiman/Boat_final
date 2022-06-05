@@ -37,19 +37,19 @@ class _BottomNavigationState extends State<BottomNavigation> {
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
-              label: "home",
+              label: "HOME",
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.chat),
-              label: "Chat",
+              label: "CHAT",
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.group),
-              label: "Group Chat",
+              label: "GROUP CHAT",
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.room),
-              label: "Map",
+              label: "MAP",
             ),
           ]),
     );

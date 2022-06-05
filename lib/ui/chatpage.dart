@@ -2,6 +2,7 @@ import 'package:boat/components/decorations.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 final firestore = FirebaseFirestore.instance;
 var loggedinUser = FirebaseAuth.instance.currentUser;
@@ -32,7 +33,13 @@ class _ChatPageState extends State<ChatPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Group Chat'),
+        title: Text(
+          'Group  Chat',
+          style: GoogleFonts.teko(
+            color: Colors.black,
+            fontSize: 40,
+          ),
+        ),
         backgroundColor: Colors.lightBlueAccent,
       ),
       body: SafeArea(
